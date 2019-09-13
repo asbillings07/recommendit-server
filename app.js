@@ -1,5 +1,14 @@
 require('newrelic');
 const express = require('express');
+const Sentry = require('@sentry/node');
+
+Sentry.init({
+  dsn: 'https://646a0f42f7b54b3db2377c78174bdb4f@sentry.io/1726096',
+});
+
+// The request handler must be the first middleware on the app
+app.use(Sentry.Handlers.requestHandler());
+
 const { PORT, CLIENT_ORIGIN } = require('./Config');
 // required to show HTTP requests in console
 const morgan = require('morgan');
@@ -75,6 +84,18 @@ app.get('/', (req, res, next) => {
     message: 'Welcome to the recommendation App!',
   });
 });
+
+// Sentry Error Hanlder
+app.use(Sentry.Handlers.errorHandler());
+
+// Optional fallthrough error handler
+app.use(function onError(err, req, res, next) {
+  // The error id is attached to `res.sentry` to be returned
+  // and optionally displayed to the user for support.
+  res.statusCode = 500;
+  res.end(res.sentry + '\n');
+});
+
 // global error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');
