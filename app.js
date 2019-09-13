@@ -9,6 +9,7 @@ Sentry.init({
 // The request handler must be the first middleware on the app
 
 const { PORT, CLIENT_ORIGIN } = require('./Config');
+const formData = require('express-form-data');
 // required to show HTTP requests in console
 const morgan = require('morgan');
 const cors = require('cors');
@@ -60,6 +61,7 @@ const corsOptions = {
 };
 
 app.use(cors());
+app.use(formData.parse());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(passport.initialize());
