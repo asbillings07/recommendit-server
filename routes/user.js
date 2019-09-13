@@ -121,7 +121,11 @@ router.get('/email/confirm/:id', confirmEmail);
 // POST - Uploads photos to cloudinary storage
 router.post('/profile-upload', (req, res) => {
   const values = Object.values(req.files);
-  const promises = values.map(image => cloudinary.uploader.upload(image.path));
+  console.log(values);
+  const promises = values.map(image => {
+    console.log(image.path);
+    cloudinary.v2.uploader.upload(image.path);
+  });
 
   Promise.all(promises).then(results => res.json(results));
 });
