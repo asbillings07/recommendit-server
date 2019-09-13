@@ -7,7 +7,6 @@ Sentry.init({
 });
 
 // The request handler must be the first middleware on the app
-app.use(Sentry.Handlers.requestHandler());
 
 const { PORT, CLIENT_ORIGIN } = require('./Config');
 // required to show HTTP requests in console
@@ -19,6 +18,10 @@ require('jsonwebtoken');
 require('dotenv').config();
 const passportJWT = require('passport-jwt');
 const { findUserByObj } = require('./services/userFunctions');
+
+const app = express();
+exports.app = app;
+app.use(Sentry.Handlers.requestHandler());
 
 // Passport JWT Authentication
 let ExtractJwt = passportJWT.ExtractJwt;
@@ -56,8 +59,6 @@ const corsOptions = {
   },
 };
 
-const app = express();
-exports.app = app;
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
