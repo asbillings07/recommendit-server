@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-require('dotenv').config();
-const cloudinary = require('cloudinary');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
@@ -20,14 +18,6 @@ const {
   findUserByEmail,
   findUserByObj,
 } = require('../services/userFunctions');
-
-// Cloudinary Config
-
-cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.API_KEY,
-  api_secret: process.env.API_SECRET,
-});
 
 // Authentication Route
 router.post(
@@ -117,17 +107,5 @@ router.delete(
 
 router.post('/email', collectEmail);
 router.get('/email/confirm/:id', confirmEmail);
-
-// POST - Uploads photos to cloudinary storage
-router.post('/profile-upload', (req, res) => {
-  const values = Object.values(req.files);
-  console.log(values);
-  const promises = values.map(image => {
-    console.log(image.path);
-    cloudinary.v2.uploader.upload(image.path);
-  });
-
-  Promise.all(promises).then(results => res.json(results));
-});
 
 module.exports = router;

@@ -88,6 +88,15 @@ app.get('/', (req, res, next) => {
   });
 });
 
+// POST - Uploads photos to cloudinary storage
+// app.post('/api/profile-upload', (req, res) => {
+//   const values = req.files;
+
+//   cloudinary.uploader.upload(values.path, (error, result) =>
+//     console.log(result, error)
+//   );
+// });
+
 // Sentry Error Hanlder
 app.use(
   Sentry.Handlers.errorHandler({
