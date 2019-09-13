@@ -580,3 +580,7 @@
 {"v":0,"level":30,"name":"newrelic","hostname":"Aaron Billings","pid":26869,"time":"2019-09-13T18:31:12.734Z","msg":"Agent state changed from connected to started."}
 {"v":0,"level":30,"name":"newrelic","hostname":"Aaron Billings","pid":26869,"time":"2019-09-13T18:31:13.735Z","msg":"Harvest started."}
 {"v":0,"level":30,"name":"newrelic","hostname":"Aaron Billings","pid":26869,"time":"2019-09-13T18:31:13.925Z","msg":"Harvest finished."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Aaron Billings","pid":26869,"time":"2019-09-13T18:32:13.743Z","msg":"Harvest started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Aaron Billings","pid":26869,"time":"2019-09-13T18:32:13.923Z","msg":"Harvest finished."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Aaron Billings","pid":26869,"time":"2019-09-13T18:33:13.746Z","msg":"Harvest started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Aaron Billings","pid":26869,"time":"2019-09-13T18:33:13.925Z","msg":"Harvest finished."}
