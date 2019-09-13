@@ -86,15 +86,17 @@ app.get('/', (req, res, next) => {
 });
 
 // Sentry Error Hanlder
-app.use(Sentry.Handlers.errorHandler());
-
-// Optional fallthrough error handler
-app.use(function onError(err, req, res, next) {
-  // The error id is attached to `res.sentry` to be returned
-  // and optionally displayed to the user for support.
-  res.statusCode = 500;
-  res.end(res.sentry + '\n');
-});
+app.use(
+  Sentry.Handlers.errorHandler({
+    shouldHandleError(error) {
+      // Capture all 404 and 500 errors
+      if (error.status >= 100 && error.status < 600) {
+        return true;
+      }
+      return false;
+    },
+  })
+);
 
 // global error handler
 app.use((req, res, next) => {
