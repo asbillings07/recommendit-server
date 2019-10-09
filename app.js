@@ -51,6 +51,7 @@ exports.authenticateUser = authenticateUser;
 /// whitelisting for Cors
 const whitelist = [
   'http://localhost:3000',
+  'http://localhost:3001',
   'https://recommendit.netlify.com',
   'https://sentry.io',
 ];
