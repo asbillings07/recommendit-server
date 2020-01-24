@@ -3,3 +3,6 @@ notes
 nodemon.json
 .env
 .env
+
+hidden.env
+.terraform

@@ -1830,3 +1830,47 @@
 {"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":42277,"time":"2020-01-19T22:48:42.453Z","msg":"Harvest finished."}
 {"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":42277,"time":"2020-01-19T22:49:42.301Z","msg":"Harvest started."}
 {"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":42277,"time":"2020-01-19T22:49:42.456Z","msg":"Harvest finished."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":1725,"time":"2020-01-24T21:07:40.642Z","msg":"Using New Relic for Node.js. Agent version: 5.11.0; Node version: v11.10.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":1725,"time":"2020-01-24T21:07:40.832Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":1725,"time":"2020-01-24T21:07:40.992Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":1725,"time":"2020-01-24T21:07:40.992Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":1725,"time":"2020-01-24T21:07:44.009Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":1725,"time":"2020-01-24T21:07:44.010Z","msg":"Connected to collector-001.newrelic.com:443 with agent run ID BQpcnTCByF9UACW4JgxQF0deK1zsAAgBAAAnIQEAAAa9AgQLi5pdAwAGNS4xMS4wAAxDMDJaODNITkxWQ0cAC1JlY29tbWVuZEl0.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":1725,"time":"2020-01-24T21:07:44.010Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/2471974/applications/193698397","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":1725,"time":"2020-01-24T21:07:44.015Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":1725,"time":"2020-01-24T21:07:45.020Z","msg":"Harvest started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":1725,"time":"2020-01-24T21:07:45.146Z","msg":"Harvest finished."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":1725,"time":"2020-01-24T21:08:45.022Z","msg":"Harvest started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":1725,"time":"2020-01-24T21:08:45.213Z","msg":"Harvest finished."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2435,"time":"2020-01-24T21:09:13.327Z","msg":"Using New Relic for Node.js. Agent version: 5.11.0; Node version: v11.10.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2435,"time":"2020-01-24T21:09:13.449Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2435,"time":"2020-01-24T21:09:13.620Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2435,"time":"2020-01-24T21:09:13.620Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2435,"time":"2020-01-24T21:09:16.359Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2435,"time":"2020-01-24T21:09:16.360Z","msg":"Connected to collector-001.newrelic.com:443 with agent run ID BenRWG2uFQKrACW4JgxQF0deK11kAAgBAAAnIQEAAAmDAgQLi5pdAwAGNS4xMS4wAAxDMDJaODNITkxWQ0cAC1JlY29tbWVuZEl0.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2435,"time":"2020-01-24T21:09:16.360Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/2471974/applications/193698397","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2435,"time":"2020-01-24T21:09:16.365Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2435,"time":"2020-01-24T21:09:17.366Z","msg":"Harvest started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2435,"time":"2020-01-24T21:09:17.495Z","msg":"Harvest finished."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2861,"time":"2020-01-24T21:10:04.923Z","msg":"Using New Relic for Node.js. Agent version: 5.11.0; Node version: v11.10.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2861,"time":"2020-01-24T21:10:05.040Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2861,"time":"2020-01-24T21:10:05.184Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2861,"time":"2020-01-24T21:10:05.184Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2861,"time":"2020-01-24T21:10:07.508Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2861,"time":"2020-01-24T21:10:07.508Z","msg":"Connected to collector-001.newrelic.com:443 with agent run ID BdMViQvl7BDYACW4JgxQF0deK12gAAgBAAAnIQEAAAstAgQLi5pdAwAGNS4xMS4wAAxDMDJaODNITkxWQ0cAC1JlY29tbWVuZEl0.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2861,"time":"2020-01-24T21:10:07.508Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/2471974/applications/193698397","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2861,"time":"2020-01-24T21:10:07.514Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2861,"time":"2020-01-24T21:10:08.515Z","msg":"Harvest started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":2861,"time":"2020-01-24T21:10:08.644Z","msg":"Harvest finished."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":3604,"time":"2020-01-24T21:11:01.601Z","msg":"Using New Relic for Node.js. Agent version: 5.11.0; Node version: v11.10.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":3604,"time":"2020-01-24T21:11:01.763Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":3604,"time":"2020-01-24T21:11:01.934Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":3604,"time":"2020-01-24T21:11:01.934Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":3604,"time":"2020-01-24T21:11:04.702Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":3604,"time":"2020-01-24T21:11:04.702Z","msg":"Connected to collector-001.newrelic.com:443 with agent run ID BSjCuy_uKC48ACW4JgxQF0deK13cAAgBAAAnIQEAAA4UAgQLi5pdAwAGNS4xMS4wAAxDMDJaODNITkxWQ0cAC1JlY29tbWVuZEl0.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":3604,"time":"2020-01-24T21:11:04.702Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/2471974/applications/193698397","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":3604,"time":"2020-01-24T21:11:04.707Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":3604,"time":"2020-01-24T21:11:05.707Z","msg":"Harvest started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":3604,"time":"2020-01-24T21:11:05.867Z","msg":"Harvest finished."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":3604,"time":"2020-01-24T21:12:05.713Z","msg":"Harvest started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"C02Z83HNLVCG","pid":3604,"time":"2020-01-24T21:12:05.839Z","msg":"Harvest finished."}
