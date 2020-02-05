@@ -57,7 +57,7 @@ const whitelist = [
   'https://sentry.io'
 ]
 const corsOptions = {
-  origin: function(origin, callback) {
+  origin: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true)
     } else {
@@ -66,7 +66,7 @@ const corsOptions = {
   }
 }
 
-app.use(cors(corsOptions))
+app.use(cors({ credentials: true, origin: corsOptions }))
 app.use(formData.parse())
 app.use(morgan('dev'))
 app.use(express.json())
@@ -106,7 +106,7 @@ app.get('/', (req, res, next) => {
 // Sentry Error Hanlder
 app.use(
   Sentry.Handlers.errorHandler({
-    shouldHandleError(error) {
+    shouldHandleError (error) {
       // Capture all 404 and 500 errors
       if (error.status >= 100 && error.status < 600) {
         return true

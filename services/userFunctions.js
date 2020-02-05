@@ -1,19 +1,19 @@
-const { User, Recommendation } = require('../models');
-const bcrypt = require('bcryptjs');
-const Sequelize = require('sequelize');
-const Op = Sequelize.Op;
+const { User, Recommendation } = require('../models')
+const bcrypt = require('bcryptjs')
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
 
 // creates user and hashes password
 const createUser = user => {
-  user.password = bcrypt.hashSync(user.password);
+  user.password = bcrypt.hashSync(user.password)
 
   return User.create({
     firstName: user.firstName,
     lastName: user.lastName,
     email: user.email,
-    password: user.password,
-  });
-};
+    password: user.password
+  })
+}
 
 // Finds authed user by id then updates user and hashes password if needed
 const updateUser = (id, body) =>
@@ -21,66 +21,66 @@ const updateUser = (id, body) =>
     user.update({
       firstName: body.firstName,
       lastName: body.lastName,
-      email: body.email,
+      email: body.email
     })
-  );
+  )
 
 const updateUserPhoto = (id, body) =>
   User.findOne({ where: { id } }).then(user => {
     user.update({
       photoName: body.photoName,
-      imageId: body.photoUrl,
-    });
-  });
+      imageId: body.photoUrl
+    })
+  })
 
 // finds an authed user id then deletes a user
 const deleteUser = currentUser =>
   User.findOne({
     where: {
-      id: currentUser.id,
-    },
-  }).then(user => user.destroy());
+      id: currentUser.id
+    }
+  }).then(user => user.destroy())
 
 // find user by email
 
 const findUserByEmail = email =>
   User.findOne({
     where: {
-      email,
-    },
-  });
+      email
+    }
+  })
 // find user by ForgotPasswordToken
 const findUserByToken = token =>
   User.findOne({
     where: {
       resetPasswordToken: token,
       resetPasswordExpires: {
-        [Op.gte]: Date.now(),
-      },
-    },
-  });
+        [Op.gte]: Date.now()
+      }
+    }
+  })
 
 const findUserById = id =>
   User.findOne({
     where: { id },
     attributes: {
-      exclude: ['createdAt', 'updatedAt', 'password'],
-    },
-  });
+      exclude: ['createdAt', 'updatedAt', 'password']
+    }
+  })
 
 const findUserByObj = obj =>
   User.findOne({
     where: obj,
     include: [
       {
-        model: Recommendation,
-      },
+        model: Recommendation
+      }
     ],
     order: [[{ model: Recommendation }, 'updatedAt', 'DESC']],
     attributes: {
-      exclude: ['createdAt', 'updatedAt', 'password'],
-    },
-  });
+      exclude: ['createdAt', 'updatedAt', 'password']
+    }
+  })
 
 module.exports = {
   createUser,
@@ -90,5 +90,5 @@ module.exports = {
   findUserByToken,
   findUserById,
   findUserByObj,
-  updateUserPhoto,
-};
+  updateUserPhoto
+}
