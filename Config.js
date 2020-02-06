@@ -8,5 +8,6 @@ module.exports = {
   cloudApiKey: process.env.CLOUD_API_KEY,
   cloudApiSecret: process.env.CLOUD_API_SECRET,
   googleMailClientId: process.env.GOOGLE_MAIL_CLIENT_ID,
-  googleMailClientSecret: process.env.GOOGLE_MAIL_CLIENT_SECRET
+  googleMailClientSecret: process.env.GOOGLE_MAIL_CLIENT_SECRET,
+  cookieParserSecret: process.env.COOKIE_PARSER_SECRET
 }

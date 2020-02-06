@@ -1,6 +1,9 @@
 require('newrelic')
 const express = require('express')
+const bodyParser = require('body-parser')
+var cookieParser = require('cookie-parser')
 const Sentry = require('@sentry/node')
+const config = require('./Config')
 
 Sentry.init({
   dsn: 'https://646a0f42f7b54b3db2377c78174bdb4f@sentry.io/1726096'
@@ -69,7 +72,8 @@ const corsOptions = {
 app.use(cors({ credentials: true, origin: corsOptions }))
 app.use(formData.parse())
 app.use(morgan('dev'))
-app.use(express.json())
+app.use(cookieParser(config.cookieParserSecret))
+app.use(bodyParser.json())
 app.use(passport.initialize())
 
 // route requires
@@ -106,7 +110,7 @@ app.get('/', (req, res, next) => {
 // Sentry Error Hanlder
 app.use(
   Sentry.Handlers.errorHandler({
-    shouldHandleError (error) {
+    shouldHandleError(error) {
       // Capture all 404 and 500 errors
       if (error.status >= 100 && error.status < 600) {
         return true
@@ -117,7 +121,7 @@ app.use(
 )
 
 // global error handler
-app.use((req, res, next) => {
+app.use('*', (req, res, next) => {
   const err = new Error('Not Found')
   err.status = 404
   next(err)

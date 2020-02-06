@@ -43,15 +43,13 @@ exports.sendEmail = (mailOptions, successfulMessage) => {
   }
   const transporter = nodemailer.createTransport(creds)
 
-  transporter
-    .sendMail(mailOptions, (err, response) => {
-      if (response) {
-        console.log('Sending Email')
-        console.log(response)
-        res.status(200).json(successfulMessage)
-      } else {
-        console.error(`There was an error: ${err}`)
-      }
-    })
-    .catch(err => console.log(err))
+  transporter.sendMail(mailOptions, (err, res) => {
+    if (res) {
+      console.log('Sending Email')
+      console.log(res)
+      res.status(200).json(successfulMessage)
+    } else {
+      res.status(400).send({ error: `There was an error: ${err}` })
+    }
+  })
 }

@@ -4,8 +4,7 @@ const bcrypt = require('bcryptjs')
 const config = require('../Config')
 const jwt = require('jsonwebtoken')
 const { authenicateToken } = require('../services/authToken')
-const passport = require('passport')
-const { app, jwtOptions, authenticateUser } = require('../app')
+const { authenticateUser } = require('../app')
 const {
   validateUser,
   validateUpdateUser
@@ -13,7 +12,6 @@ const {
 const { collectEmail, confirmEmail } = require('../services/emailController')
 const asyncHandler = require('../services/asyncErrorHanlder')
 const {
-  getUser,
   createUser,
   deleteUser,
   updateUser,
@@ -39,10 +37,10 @@ router.post(
           photo: user.photo
         }
         const token = jwt.sign(authUser, config.jwtSecret)
-        console.log(token)
+        res.cookie('user', authUser, { signed: true })
         res.json({
           message: 'ok',
-          token: token,
+          token,
           user: {
             id: user.id,
             firstName: user.firstName,
@@ -64,10 +62,9 @@ router.post(
 // GET /api/users 200 - Returns the currently authenticated user
 router.get(
   '/users',
-  authenticateUser,
+  authenicateToken,
   asyncHandler(async (req, res) => {
-    const id = req.user.id
-    console.log(id)
+    const { id } = req.signedCookies.user
     const user = await findUserByObj({ id })
     res.status(200).json(user)
   })
@@ -78,7 +75,9 @@ router.post(
   validateUser,
   asyncHandler(async (req, res) => {
     const user = req.body
-    await createUser(user)
+    const newUser = await createUser(user)
+    const authedUser = newUser.dataValues
+    res.cookie('user', authedUser, { signed: true })
     res
       .location('/')
       .status(201)
@@ -95,9 +94,9 @@ router.put(
   authenticateUser,
   collectEmail,
   asyncHandler(async (req, res) => {
-    const userid = req.user.id
+    const { id } = req.signedCookies.user
     const body = req.body
-    await updateUser(userid, body)
+    await updateUser(id, body)
     res.status(204).end()
   })
 )
@@ -106,9 +105,9 @@ router.post(
   '/userphoto',
   authenticateUser,
   asyncHandler(async (req, res) => {
-    const userid = req.user.id
+    const { id } = req.signedCookies.user
     const body = req.body
-    await updateUserPhoto(userid, body)
+    await updateUserPhoto(id, body)
     res.status(204).end()
   })
 )
@@ -117,7 +116,7 @@ router.delete(
   '/users',
   authenticateUser,
   asyncHandler(async (req, res) => {
-    const user = req.user
+    const { user } = req.signedCookies
     await deleteUser(user)
     res
       .status(204)
@@ -126,7 +125,7 @@ router.delete(
   })
 )
 
-router.post('/email', collectEmail)
+router.get('/email', collectEmail)
 router.get('/email/confirm/:id', confirmEmail)
 
 module.exports = router
