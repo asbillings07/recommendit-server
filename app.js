@@ -1,20 +1,18 @@
 require('newrelic')
+const env = process.env.NODE_ENV || 'local'
 const express = require('express')
 const bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
 const Sentry = require('@sentry/node')
 const config = require('./Config')
-
+const logger = require('./logger')
 Sentry.init({
   dsn: 'https://646a0f42f7b54b3db2377c78174bdb4f@sentry.io/1726096'
 })
 
 // The request handler must be the first middleware on the app
-
-const { PORT } = require('./Config')
 const formData = require('express-form-data')
 // required to show HTTP requests in console
-const morgan = require('morgan')
 const cors = require('cors')
 const passport = require('passport')
 require('bcryptjs')
@@ -71,7 +69,8 @@ const corsOptions = {
 
 app.use(cors({ credentials: true, origin: corsOptions }))
 app.use(formData.parse())
-app.use(morgan('dev'))
+logger.debug("Overriding 'Express' logger")
+app.use(require('morgan')('combined', { stream: logger.stream }))
 app.use(cookieParser(config.cookieParserSecret))
 app.use(bodyParser.json())
 app.use(passport.initialize())
@@ -110,7 +109,7 @@ app.get('/', (req, res, next) => {
 // Sentry Error Hanlder
 app.use(
   Sentry.Handlers.errorHandler({
-    shouldHandleError(error) {
+    shouldHandleError (error) {
       // Capture all 404 and 500 errors
       if (error.status >= 100 && error.status < 600) {
         return true
@@ -143,7 +142,7 @@ app.use((err, req, res, next) => {
 })
 
 // sets port
-
+const PORT = config[env].port
 // creates server
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`)

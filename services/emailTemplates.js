@@ -1,18 +1,19 @@
-const { CLIENT_ORIGIN } = require('../Config');
+const config = require('../Config')
+const env = 'local'
 
 module.exports = {
-  confirm: (id, email) => ({
+  confirm: email => ({
     from: 'recommendItBot@gmail.com',
     to: `${email}`,
     subject: 'Confirm Your Email',
     html: `
         <h1> Welcome to RecommendIt! </h1>
         <p>Click the link below to confirm your email </p>
-        <a href='${CLIENT_ORIGIN}/confirm/${id}'>
+        <a href='${config[env].clientOrigin}/confirm'>
           Confirm Email
         </a>
         <p>We hope you enjoy using the App, if you think of anything that could make your experience better, please let us know!</p>
-      `,
+      `
   }),
 
   passwordReset: (email, passwordResetLink) => ({
@@ -29,6 +30,6 @@ module.exports = {
 
     <p>If you did not request to reset your password, please disregard this email and your password will not be changed.
     </p>
-   `,
-  }),
-};
+   `
+  })
+}

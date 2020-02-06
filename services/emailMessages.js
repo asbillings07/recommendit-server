@@ -3,5 +3,5 @@ module.exports = {
   confirmed: 'Your email is confirmed!',
   resend: 'Confirmation email resent, maybe check your spam?',
   couldNotFind: 'Could not find you!',
-  alreadyConfirmed: 'Your email was already confirmed',
-};
+  alreadyConfirmed: 'Your email was already confirmed'
+}

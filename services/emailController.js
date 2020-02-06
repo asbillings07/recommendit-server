@@ -5,17 +5,17 @@ const template = require('./emailTemplates')
 const asyncHandler = require('./asyncErrorHanlder')
 
 exports.collectEmail = asyncHandler(async (req, res, next) => {
-  console.log(req.signedCookies)
+  // console.log(req.signedCookies)
   const { email } = req.signedCookies.user
 
   console.log(email)
   const user = await findUserByEmail(email)
 
   if (user && !user.confirmed) {
-    sendEmail(template.confirm(user.id, user.email), messages.confirm)
+    sendEmail(template.confirm(user.email), messages.confirm)
     setTimeout(() => {
       res.status(200).json('Conformation Email in your inbox')
-    }, 4000)
+    }, 2000)
   } else {
     res.status(200).json({ message: messages.alreadyConfirmed })
   }
