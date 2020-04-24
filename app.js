@@ -1,4 +1,4 @@
-require('newrelic')
+// require('newrelic')
 const env = process.env.NODE_ENV || 'local'
 const express = require('express')
 const bodyParser = require('body-parser')

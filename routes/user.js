@@ -1,4 +1,5 @@
 const express = require('express')
+require('dotenv').config()
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 const config = require('../Config')
@@ -36,18 +37,13 @@ router.post(
           email: user.email,
           photo: user.photo
         }
+
         const token = jwt.sign(authUser, config.jwtSecret)
         res.cookie('user', authUser, { signed: true })
         res.json({
           message: 'ok',
-          token,
-          user: {
-            id: user.id,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            email: user.email,
-            photo: user.photo
-          }
+          token: token,
+          user: authUser
         })
       } else {
         res.status(401).json({ message: 'Email or Password Incorrect' })

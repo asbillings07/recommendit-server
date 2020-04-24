@@ -232,3 +232,130 @@
 { message:
    '::ffff:127.0.0.1 - - [06/Feb/2020:21:45:33 +0000] "GET /api/category HTTP/1.1" 200 116 "-" "axios/0.19.0"\n',
   level: 'info' }
+{ message:
+   '::1 - - [06/Feb/2020:21:47:28 +0000] "GET /api/email/confirm/undefined HTTP/1.1" - - "http://localhost:3000/confirm" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::ffff:127.0.0.1 - - [06/Feb/2020:22:02:21 +0000] "GET /api/category HTTP/1.1" - - "-" "axios/0.19.0"\n',
+  level: 'info' }
+{ message:
+   '::ffff:127.0.0.1 - - [06/Feb/2020:22:07:56 +0000] "GET /api/category HTTP/1.1" - - "-" "axios/0.19.0"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:11:09:24 +0000] "GET /api/category HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:11:25:57 +0000] "GET /api/category HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:11:27:53 +0000] "GET /api/category HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:11:28:14 +0000] "GET /api/category HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:39:50 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:43:22 +0000] "POST /api/login HTTP/1.1" 200 12 "http://localhost:3000/signin" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:43:22 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:46:35 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:46:40 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:46:49 +0000] "POST /api/login HTTP/1.1" 200 12 "http://localhost:3000/signin" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:46:49 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:51:45 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:51:49 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:51:55 +0000] "POST /api/login HTTP/1.1" 200 12 "http://localhost:3000/signin" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:51:55 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:53:26 +0000] "POST /api/login HTTP/1.1" 200 12 "http://localhost:3000/signin" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:53:26 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:56:07 +0000] "POST /api/login HTTP/1.1" 200 12 "http://localhost:3000/signin" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:56:07 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:57:37 +0000] "POST /api/login HTTP/1.1" 200 12 "http://localhost:3000/signin" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:57:37 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:59:28 +0000] "POST /api/login HTTP/1.1" 200 330 "http://localhost:3000/signin" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:59:28 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:18:59:46 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:19:00:22 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:19:00:30 +0000] "POST /api/login HTTP/1.1" 200 12 "http://localhost:3000/signin" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:19:00:30 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:19:01:27 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:19:01:31 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:19:02:39 +0000] "POST /api/login HTTP/1.1" 200 330 "http://localhost:3000/signin" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [07/Feb/2020:19:05:31 +0000] "POST /api/forgotpassword HTTP/1.1" 200 12 "http://localhost:3000/forgotpassword" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [10/Feb/2020:18:40:31 +0000] "GET /api/category HTTP/1.1" 200 116 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"\n',
+  level: 'info' }
+{ message:
+   '::1 - - [13/Feb/2020:13:43:02 +0000] "GET /api/users HTTP/1.1" 400 118 "-" "PostmanRuntime/7.22.0"\n',
+  level: 'info' }
+{ message:
+   '::1 - a@billings.com [13/Feb/2020:13:44:17 +0000] "GET /api/users HTTP/1.1" 400 55 "-" "PostmanRuntime/7.22.0"\n',
+  level: 'info' }
+{ message:
+   '::1 - a@billings.com [13/Feb/2020:18:57:36 +0000] "PUT /api/courses/5e45924672b51ba72da1516e HTTP/1.1" 404 22 "-" "PostmanRuntime/7.22.0"\n',
+  level: 'info' }
+{ message:
+   '::ffff:127.0.0.1 - - [20/Feb/2020:12:34:57 +0000] "GET /api/category HTTP/1.1" 200 116 "-" "axios/0.19.0"\n',
+  level: 'info' }
+{ message:
+   '::ffff:127.0.0.1 - - [20/Feb/2020:12:35:12 +0000] "GET /api/category HTTP/1.1" 200 116 "-" "axios/0.19.0"\n',
+  level: 'info' }
+{ message:
+   '::ffff:127.0.0.1 - - [29/Feb/2020:00:31:06 +0000] "GET /api/category HTTP/1.1" 200 116 "-" "axios/0.19.0"\n',
+  level: 'info' }
+{
+  message: '::1 - - [24/Apr/2020:23:39:15 +0000] "GET /api/category/1 HTTP/1.1" 200 64 "http://localhost:3000/category/1/recs" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36"\n',
+  level: 'info'
+}
