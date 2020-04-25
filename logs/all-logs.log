@@ -359,3 +359,2870 @@
   message: '::1 - - [24/Apr/2020:23:39:15 +0000] "GET /api/category/1 HTTP/1.1" 200 64 "http://localhost:3000/category/1/recs" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36"\n',
   level: 'info'
 }
+{
+  error: TypeError: Cannot read property 'use_env_variable' of undefined
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)
+      at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)
+      at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32),
+  level: 'error',
+  message: "uncaughtException: Cannot read property 'use_env_variable' of undefined\n" +
+    "TypeError: Cannot read property 'use_env_variable' of undefined\n" +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)\n' +
+    '    at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)\n' +
+    '    at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)',
+  stack: "TypeError: Cannot read property 'use_env_variable' of undefined\n" +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)\n' +
+    '    at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)\n' +
+    '    at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:05:25 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 12355,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 57372672,
+      heapTotal: 33038336,
+      heapUsed: 18532264,
+      external: 1288677
+    }
+  },
+  os: {
+    loadavg: [ 3.4130859375, 3.357421875, 3.78271484375 ],
+    uptime: 534199
+  },
+  trace: [
+    {
+      column: 12,
+      file: '/Users/aabillings/personal_projects/recommenditserver/models/index.js',
+      function: null,
+      line: 15,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 47,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js',
+      function: null,
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 47,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js',
+      function: 'Function._load',
+      line: 63,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 34,
+      file: '/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 47,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js',
+      function: null,
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 47,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js',
+      function: 'Function._load',
+      line: 63,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 22,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    }
+  ]
+}
+{
+  error: TypeError: Cannot read property 'use_env_variable' of undefined
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)
+      at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)
+      at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32),
+  level: 'error',
+  message: "uncaughtException: Cannot read property 'use_env_variable' of undefined\n" +
+    "TypeError: Cannot read property 'use_env_variable' of undefined\n" +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)\n' +
+    '    at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)\n' +
+    '    at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)',
+  stack: "TypeError: Cannot read property 'use_env_variable' of undefined\n" +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)\n' +
+    '    at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)\n' +
+    '    at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:06:06 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 12701,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 56221696,
+      heapTotal: 32514048,
+      heapUsed: 18504208,
+      external: 1310698
+    }
+  },
+  os: {
+    loadavg: [ 3.73583984375, 3.45068359375, 3.79638671875 ],
+    uptime: 534240
+  },
+  trace: [
+    {
+      column: 12,
+      file: '/Users/aabillings/personal_projects/recommenditserver/models/index.js',
+      function: null,
+      line: 15,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 47,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js',
+      function: null,
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 47,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js',
+      function: 'Function._load',
+      line: 63,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 34,
+      file: '/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 47,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js',
+      function: null,
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 47,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js',
+      function: 'Function._load',
+      line: 63,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 22,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    }
+  ]
+}
+{
+  error: TypeError: Cannot read property 'use_env_variable' of undefined
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)
+      at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)
+      at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32),
+  level: 'error',
+  message: "uncaughtException: Cannot read property 'use_env_variable' of undefined\n" +
+    "TypeError: Cannot read property 'use_env_variable' of undefined\n" +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)\n' +
+    '    at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)\n' +
+    '    at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)',
+  stack: "TypeError: Cannot read property 'use_env_variable' of undefined\n" +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)\n' +
+    '    at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js:40:47)\n' +
+    '    at Function._load (/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js:63:47)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:06:24 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 12864,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 58597376,
+      heapTotal: 32776192,
+      heapUsed: 18640152,
+      external: 1310698
+    }
+  },
+  os: {
+    loadavg: [ 3.2314453125, 3.35498046875, 3.75341796875 ],
+    uptime: 534258
+  },
+  trace: [
+    {
+      column: 12,
+      file: '/Users/aabillings/personal_projects/recommenditserver/models/index.js',
+      function: null,
+      line: 15,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 47,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js',
+      function: null,
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 47,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js',
+      function: 'Function._load',
+      line: 63,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 34,
+      file: '/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 47,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/console.js',
+      function: null,
+      line: 40,
+      method: null,
+      native: false
+    },
+    {
+      column: 47,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/@sentry/node/dist/integrations/http.js',
+      function: 'Function._load',
+      line: 63,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 22,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    }
+  ]
+}
+{
+  error: TypeError: Cannot read property 'use_env_variable' of undefined
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+      at internal/main/run_main_module.js:18:47,
+  level: 'error',
+  message: "uncaughtException: Cannot read property 'use_env_variable' of undefined\n" +
+    "TypeError: Cannot read property 'use_env_variable' of undefined\n" +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  stack: "TypeError: Cannot read property 'use_env_variable' of undefined\n" +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:07:17 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 13917,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 58597376,
+      heapTotal: 32866304,
+      heapUsed: 18990936,
+      external: 1393560
+    }
+  },
+  os: {
+    loadavg: [ 6.9462890625, 4.3818359375, 4.1083984375 ],
+    uptime: 534311
+  },
+  trace: [
+    {
+      column: 12,
+      file: '/Users/aabillings/personal_projects/recommenditserver/models/index.js',
+      function: null,
+      line: 15,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 34,
+      file: '/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 22,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'internal/modules/run_main.js',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 74,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'internal/main/run_main_module.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    }
+  ]
+}
+{
+  error: TypeError: Cannot read property 'use_env_variable' of undefined
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+      at internal/main/run_main_module.js:18:47,
+  level: 'error',
+  message: "uncaughtException: Cannot read property 'use_env_variable' of undefined\n" +
+    "TypeError: Cannot read property 'use_env_variable' of undefined\n" +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  stack: "TypeError: Cannot read property 'use_env_variable' of undefined\n" +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:15:12)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:09:05 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 15141,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 56586240,
+      heapTotal: 32604160,
+      heapUsed: 18938608,
+      external: 1326505
+    }
+  },
+  os: {
+    loadavg: [ 5.53955078125, 4.68408203125, 4.25927734375 ],
+    uptime: 534419
+  },
+  trace: [
+    {
+      column: 12,
+      file: '/Users/aabillings/personal_projects/recommenditserver/models/index.js',
+      function: null,
+      line: 15,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 34,
+      file: '/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 22,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'internal/modules/run_main.js',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 74,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'internal/main/run_main_module.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    }
+  ]
+}
+{
+  error: TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined
+      at validateString (internal/validators.js:117:11)
+      at Url.parse (url.js:159:3)
+      at Object.urlParse [as parse] (url.js:154:13)
+      at new Sequelize (/Users/aabillings/personal_projects/recommenditserver/node_modules/sequelize/lib/sequelize.js:187:28)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:17:15)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32) {
+    code: 'ERR_INVALID_ARG_TYPE'
+  },
+  level: 'error',
+  message: 'uncaughtException: The "url" argument must be of type string. Received undefined\n' +
+    'TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined\n' +
+    '    at validateString (internal/validators.js:117:11)\n' +
+    '    at Url.parse (url.js:159:3)\n' +
+    '    at Object.urlParse [as parse] (url.js:154:13)\n' +
+    '    at new Sequelize (/Users/aabillings/personal_projects/recommenditserver/node_modules/sequelize/lib/sequelize.js:187:28)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:17:15)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)',
+  stack: 'TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined\n' +
+    '    at validateString (internal/validators.js:117:11)\n' +
+    '    at Url.parse (url.js:159:3)\n' +
+    '    at Object.urlParse [as parse] (url.js:154:13)\n' +
+    '    at new Sequelize (/Users/aabillings/personal_projects/recommenditserver/node_modules/sequelize/lib/sequelize.js:187:28)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:17:15)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:17:23 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 18432,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 58421248,
+      heapTotal: 32604160,
+      heapUsed: 19015384,
+      external: 1334517
+    }
+  },
+  os: {
+    loadavg: [ 4.103515625, 3.73779296875, 3.88818359375 ],
+    uptime: 534917
+  },
+  trace: [
+    {
+      column: 11,
+      file: 'internal/validators.js',
+      function: 'validateString',
+      line: 117,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'url.js',
+      function: 'Url.parse',
+      line: 159,
+      method: 'parse',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'url.js',
+      function: 'Object.urlParse [as parse]',
+      line: 154,
+      method: 'urlParse [as parse]',
+      native: false
+    },
+    {
+      column: 28,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/sequelize/lib/sequelize.js',
+      function: 'new Sequelize',
+      line: 187,
+      method: null,
+      native: false
+    },
+    {
+      column: 15,
+      file: '/Users/aabillings/personal_projects/recommenditserver/models/index.js',
+      function: null,
+      line: 17,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 34,
+      file: '/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 22,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    }
+  ]
+}
+{
+  error: TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined
+      at validateString (internal/validators.js:117:11)
+      at Url.parse (url.js:159:3)
+      at Object.urlParse [as parse] (url.js:154:13)
+      at new Sequelize (/Users/aabillings/personal_projects/recommenditserver/node_modules/sequelize/lib/sequelize.js:187:28)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:18:15)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Module.require (internal/modules/cjs/loader.js:1044:19)
+      at require (internal/modules/cjs/helpers.js:77:18)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32) {
+    code: 'ERR_INVALID_ARG_TYPE'
+  },
+  level: 'error',
+  message: 'uncaughtException: The "url" argument must be of type string. Received undefined\n' +
+    'TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined\n' +
+    '    at validateString (internal/validators.js:117:11)\n' +
+    '    at Url.parse (url.js:159:3)\n' +
+    '    at Object.urlParse [as parse] (url.js:154:13)\n' +
+    '    at new Sequelize (/Users/aabillings/personal_projects/recommenditserver/node_modules/sequelize/lib/sequelize.js:187:28)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:18:15)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)',
+  stack: 'TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined\n' +
+    '    at validateString (internal/validators.js:117:11)\n' +
+    '    at Url.parse (url.js:159:3)\n' +
+    '    at Object.urlParse [as parse] (url.js:154:13)\n' +
+    '    at new Sequelize (/Users/aabillings/personal_projects/recommenditserver/node_modules/sequelize/lib/sequelize.js:187:28)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/models/index.js:18:15)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js:1:34)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:1044:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:77:18)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:22:27)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:19:15 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 19159,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 57974784,
+      heapTotal: 32342016,
+      heapUsed: 19029384,
+      external: 1382461
+    }
+  },
+  os: {
+    loadavg: [ 4.26220703125, 3.81689453125, 3.892578125 ],
+    uptime: 535029
+  },
+  trace: [
+    {
+      column: 11,
+      file: 'internal/validators.js',
+      function: 'validateString',
+      line: 117,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'url.js',
+      function: 'Url.parse',
+      line: 159,
+      method: 'parse',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'url.js',
+      function: 'Object.urlParse [as parse]',
+      line: 154,
+      method: 'urlParse [as parse]',
+      native: false
+    },
+    {
+      column: 28,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/sequelize/lib/sequelize.js',
+      function: 'new Sequelize',
+      line: 187,
+      method: null,
+      native: false
+    },
+    {
+      column: 15,
+      file: '/Users/aabillings/personal_projects/recommenditserver/models/index.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 34,
+      file: '/Users/aabillings/personal_projects/recommenditserver/services/userFunctions.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 1044,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 22,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    }
+  ]
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::5432
+      at Server.setupListenHandle [as _listen2] (net.js:1309:16)
+      at listenInCluster (net.js:1357:12)
+      at Server.listen (net.js:1445:7)
+      at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+      at internal/main/run_main_module.js:18:47 {
+    code: 'EADDRINUSE',
+    errno: 'EADDRINUSE',
+    syscall: 'listen',
+    address: '::',
+    port: 5432
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::5432\n' +
+    'Error: listen EADDRINUSE: address already in use :::5432\n' +
+    '    at Server.setupListenHandle [as _listen2] (net.js:1309:16)\n' +
+    '    at listenInCluster (net.js:1357:12)\n' +
+    '    at Server.listen (net.js:1445:7)\n' +
+    '    at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  stack: 'Error: listen EADDRINUSE: address already in use :::5432\n' +
+    '    at Server.setupListenHandle [as _listen2] (net.js:1309:16)\n' +
+    '    at listenInCluster (net.js:1357:12)\n' +
+    '    at Server.listen (net.js:1445:7)\n' +
+    '    at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:20:52 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 19792,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 95125504,
+      heapTotal: 60350464,
+      heapUsed: 40644160,
+      external: 3348223
+    }
+  },
+  os: {
+    loadavg: [ 3.93310546875, 3.71875, 3.83642578125 ],
+    uptime: 535126
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'net.js',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1309,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'net.js',
+      function: 'listenInCluster',
+      line: 1357,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'net.js',
+      function: 'Server.listen',
+      line: 1445,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 618,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 147,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'internal/modules/run_main.js',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 74,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'internal/main/run_main_module.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    }
+  ]
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::5432
+      at Server.setupListenHandle [as _listen2] (net.js:1309:16)
+      at listenInCluster (net.js:1357:12)
+      at Server.listen (net.js:1445:7)
+      at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+      at internal/main/run_main_module.js:18:47 {
+    code: 'EADDRINUSE',
+    errno: 'EADDRINUSE',
+    syscall: 'listen',
+    address: '::',
+    port: 5432
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::5432\n' +
+    'Error: listen EADDRINUSE: address already in use :::5432\n' +
+    '    at Server.setupListenHandle [as _listen2] (net.js:1309:16)\n' +
+    '    at listenInCluster (net.js:1357:12)\n' +
+    '    at Server.listen (net.js:1445:7)\n' +
+    '    at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  stack: 'Error: listen EADDRINUSE: address already in use :::5432\n' +
+    '    at Server.setupListenHandle [as _listen2] (net.js:1309:16)\n' +
+    '    at listenInCluster (net.js:1357:12)\n' +
+    '    at Server.listen (net.js:1445:7)\n' +
+    '    at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:21:46 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 20155,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 94334976,
+      heapTotal: 59826176,
+      heapUsed: 40678384,
+      external: 3348223
+    }
+  },
+  os: {
+    loadavg: [ 3.2548828125, 3.55322265625, 3.7646484375 ],
+    uptime: 535180
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'net.js',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1309,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'net.js',
+      function: 'listenInCluster',
+      line: 1357,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'net.js',
+      function: 'Server.listen',
+      line: 1445,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 618,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 147,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'internal/modules/run_main.js',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 74,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'internal/main/run_main_module.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    }
+  ]
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::5432
+      at Server.setupListenHandle [as _listen2] (net.js:1309:16)
+      at listenInCluster (net.js:1357:12)
+      at Server.listen (net.js:1445:7)
+      at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+      at internal/main/run_main_module.js:18:47 {
+    code: 'EADDRINUSE',
+    errno: 'EADDRINUSE',
+    syscall: 'listen',
+    address: '::',
+    port: 5432
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::5432\n' +
+    'Error: listen EADDRINUSE: address already in use :::5432\n' +
+    '    at Server.setupListenHandle [as _listen2] (net.js:1309:16)\n' +
+    '    at listenInCluster (net.js:1357:12)\n' +
+    '    at Server.listen (net.js:1445:7)\n' +
+    '    at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  stack: 'Error: listen EADDRINUSE: address already in use :::5432\n' +
+    '    at Server.setupListenHandle [as _listen2] (net.js:1309:16)\n' +
+    '    at listenInCluster (net.js:1357:12)\n' +
+    '    at Server.listen (net.js:1445:7)\n' +
+    '    at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:22:28 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 20446,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 95309824,
+      heapTotal: 60350464,
+      heapUsed: 40428440,
+      external: 3362007
+    }
+  },
+  os: {
+    loadavg: [ 2.580078125, 3.353515625, 3.68115234375 ],
+    uptime: 535222
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'net.js',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1309,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'net.js',
+      function: 'listenInCluster',
+      line: 1357,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'net.js',
+      function: 'Server.listen',
+      line: 1445,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 618,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 147,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'internal/modules/run_main.js',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 74,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'internal/main/run_main_module.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    }
+  ]
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::5432
+      at Server.setupListenHandle [as _listen2] (net.js:1309:16)
+      at listenInCluster (net.js:1357:12)
+      at Server.listen (net.js:1445:7)
+      at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+      at internal/main/run_main_module.js:18:47 {
+    code: 'EADDRINUSE',
+    errno: 'EADDRINUSE',
+    syscall: 'listen',
+    address: '::',
+    port: 5432
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::5432\n' +
+    'Error: listen EADDRINUSE: address already in use :::5432\n' +
+    '    at Server.setupListenHandle [as _listen2] (net.js:1309:16)\n' +
+    '    at listenInCluster (net.js:1357:12)\n' +
+    '    at Server.listen (net.js:1445:7)\n' +
+    '    at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  stack: 'Error: listen EADDRINUSE: address already in use :::5432\n' +
+    '    at Server.setupListenHandle [as _listen2] (net.js:1309:16)\n' +
+    '    at listenInCluster (net.js:1357:12)\n' +
+    '    at Server.listen (net.js:1445:7)\n' +
+    '    at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:28:13 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 22600,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 96333824,
+      heapTotal: 60088320,
+      heapUsed: 40552600,
+      external: 3362007
+    }
+  },
+  os: {
+    loadavg: [ 5.451171875, 3.80419921875, 3.6767578125 ],
+    uptime: 535567
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'net.js',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1309,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'net.js',
+      function: 'listenInCluster',
+      line: 1357,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'net.js',
+      function: 'Server.listen',
+      line: 1445,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 618,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 147,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'internal/modules/run_main.js',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 74,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'internal/main/run_main_module.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    }
+  ]
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::5432
+      at Server.setupListenHandle [as _listen2] (net.js:1309:16)
+      at listenInCluster (net.js:1357:12)
+      at Server.listen (net.js:1445:7)
+      at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+      at internal/main/run_main_module.js:18:47 {
+    code: 'EADDRINUSE',
+    errno: 'EADDRINUSE',
+    syscall: 'listen',
+    address: '::',
+    port: 5432
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::5432\n' +
+    'Error: listen EADDRINUSE: address already in use :::5432\n' +
+    '    at Server.setupListenHandle [as _listen2] (net.js:1309:16)\n' +
+    '    at listenInCluster (net.js:1357:12)\n' +
+    '    at Server.listen (net.js:1445:7)\n' +
+    '    at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  stack: 'Error: listen EADDRINUSE: address already in use :::5432\n' +
+    '    at Server.setupListenHandle [as _listen2] (net.js:1309:16)\n' +
+    '    at listenInCluster (net.js:1357:12)\n' +
+    '    at Server.listen (net.js:1445:7)\n' +
+    '    at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:40:45 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 27286,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 95174656,
+      heapTotal: 60088320,
+      heapUsed: 41253056,
+      external: 3632835
+    }
+  },
+  os: {
+    loadavg: [ 3.873046875, 3.59912109375, 3.4873046875 ],
+    uptime: 536319
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'net.js',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1309,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'net.js',
+      function: 'listenInCluster',
+      line: 1357,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'net.js',
+      function: 'Server.listen',
+      line: 1445,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 618,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 147,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'internal/modules/run_main.js',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 74,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'internal/main/run_main_module.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    }
+  ]
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::5432
+      at Server.setupListenHandle [as _listen2] (net.js:1309:16)
+      at listenInCluster (net.js:1357:12)
+      at Server.listen (net.js:1445:7)
+      at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)
+      at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)
+      at Module._compile (internal/modules/cjs/loader.js:1158:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+      at Module.load (internal/modules/cjs/loader.js:1002:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+      at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+      at internal/main/run_main_module.js:18:47 {
+    code: 'EADDRINUSE',
+    errno: 'EADDRINUSE',
+    syscall: 'listen',
+    address: '::',
+    port: 5432
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::5432\n' +
+    'Error: listen EADDRINUSE: address already in use :::5432\n' +
+    '    at Server.setupListenHandle [as _listen2] (net.js:1309:16)\n' +
+    '    at listenInCluster (net.js:1357:12)\n' +
+    '    at Server.listen (net.js:1445:7)\n' +
+    '    at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  stack: 'Error: listen EADDRINUSE: address already in use :::5432\n' +
+    '    at Server.setupListenHandle [as _listen2] (net.js:1309:16)\n' +
+    '    at listenInCluster (net.js:1357:12)\n' +
+    '    at Server.listen (net.js:1445:7)\n' +
+    '    at Function.listen (/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js:618:24)\n' +
+    '    at Object.<anonymous> (/Users/aabillings/personal_projects/recommenditserver/app.js:147:5)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1158:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:1002:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:901:14)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)\n' +
+    '    at internal/main/run_main_module.js:18:47',
+  exception: true,
+  date: 'Fri Apr 24 2020 20:41:31 GMT-0400 (Eastern Daylight Time)',
+  process: {
+    pid: 27609,
+    uid: 502,
+    gid: 20,
+    cwd: '/Users/aabillings/personal_projects/recommenditserver',
+    execPath: '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+    version: 'v12.16.1',
+    argv: [
+      '/Users/aabillings/.nvm/versions/node/v12.16.1/bin/node',
+      '/Users/aabillings/personal_projects/recommenditserver/app.js'
+    ],
+    memoryUsage: {
+      rss: 94842880,
+      heapTotal: 60088320,
+      heapUsed: 40850592,
+      external: 3475481
+    }
+  },
+  os: {
+    loadavg: [ 5.30517578125, 3.93603515625, 3.6123046875 ],
+    uptime: 536365
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'net.js',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1309,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'net.js',
+      function: 'listenInCluster',
+      line: 1357,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'net.js',
+      function: 'Server.listen',
+      line: 1445,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/aabillings/personal_projects/recommenditserver/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 618,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/aabillings/personal_projects/recommenditserver/app.js',
+      function: null,
+      line: 147,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1158,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1178,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 1002,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 901,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'internal/modules/run_main.js',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 74,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'internal/main/run_main_module.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    }
+  ]
+}
