@@ -6,3 +6,4 @@ nodemon.json
 
 hidden.env
 .terraform
+package-lock.json
