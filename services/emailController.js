@@ -6,7 +6,7 @@ const asyncHandler = require('./asyncErrorHanlder')
 
 exports.collectEmail = asyncHandler(async (req, res, next) => {
   // console.log(req.signedCookies)
-  const { email } = req.signedCookies.user
+  const { email } = req.user
 
   console.log(email)
   const user = await findUserByEmail(email)
@@ -22,17 +22,18 @@ exports.collectEmail = asyncHandler(async (req, res, next) => {
 })
 
 exports.confirmEmail = asyncHandler(async (req, res) => {
-  const { id } = req.signedCookies.user
+  console.log(req)
+  const { id } = req.user
 
   const user = await findUserById(id)
-  if (!user) {
-    res.json({ message: messages.couldNotFind })
-  } else if (user && !user.confirmed) {
+  if (!user.confirmed) {
     user
       .update({
         confirmed: true
       })
       .then(() => res.json({ message: messages.confirmed }))
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err))
+  } else {
+    res.json({ message: messages.alreadyConfirmed })
   }
 })
