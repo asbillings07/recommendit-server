@@ -6,7 +6,7 @@ const asyncHandler = require('./asyncErrorHanlder')
 
 exports.collectEmail = asyncHandler(async (req, res, next) => {
   // console.log(req.signedCookies)
-  const { email } = req.user
+  const { email } = req.body
 
   console.log(email)
   const user = await findUserByEmail(email)
