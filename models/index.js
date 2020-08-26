@@ -14,7 +14,10 @@ let sequelize;
 // checks if any env variable is set
 if (config.use_env_variable) {
   // if it is use the settings for that
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+  console.log(config);
+  sequelize = new Sequelize(process.env[config.use_env_variable], {
+    rejectUnauthorized: false,
+  });
 } else {
   // if not use a new instance the db
   sequelize = new Sequelize(
@@ -30,22 +33,22 @@ sequelize
   .then(() => {
     console.log('Connection has been established successfully.');
   })
-  .catch(err => {
+  .catch((err) => {
     console.log('Unable to connect to the database:', err);
   });
 // reading the files and importing sequelize
 fs.readdirSync(__dirname)
-  .filter(file => {
+  .filter((file) => {
     return (
       file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js'
     );
   })
-  .forEach(file => {
+  .forEach((file) => {
     const model = sequelize['import'](path.join(__dirname, file));
     db[model.name] = model;
   });
 // allows us to use associatation or relationships for our db
-Object.keys(db).forEach(modelName => {
+Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
