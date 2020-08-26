@@ -6,10 +6,7 @@ const config = require('../Config')
 const jwt = require('jsonwebtoken')
 const { authenicateToken } = require('../services/authToken')
 const { authenticateUser } = require('../app')
-const {
-  validateUser,
-  validateUpdateUser
-} = require('../services/validationChain')
+const { validateUser, validateUpdateUser } = require('../services/validationChain')
 const { collectEmail, confirmEmail } = require('../services/emailController')
 const asyncHandler = require('../services/asyncErrorHanlder')
 const {
@@ -58,9 +55,9 @@ router.post(
 // GET /api/users 200 - Returns the currently authenticated user
 router.get(
   '/users',
-  authenicateToken,
+  authenticateUser,
   asyncHandler(async (req, res) => {
-    const { id } = req.signedCookies.user
+    const { id } = req.user
     const user = await findUserByObj({ id })
     res.status(200).json(user)
   })
@@ -90,7 +87,7 @@ router.put(
   authenticateUser,
   collectEmail,
   asyncHandler(async (req, res) => {
-    const { id } = req.signedCookies.user
+    const { id } = req.user
     const body = req.body
     await updateUser(id, body)
     res.status(204).end()
@@ -101,7 +98,7 @@ router.post(
   '/userphoto',
   authenticateUser,
   asyncHandler(async (req, res) => {
-    const { id } = req.signedCookies.user
+    const { id } = req.user
     const body = req.body
     await updateUserPhoto(id, body)
     res.status(204).end()
@@ -112,16 +109,13 @@ router.delete(
   '/users',
   authenticateUser,
   asyncHandler(async (req, res) => {
-    const { user } = req.signedCookies
+    const { user } = req
     await deleteUser(user)
-    res
-      .status(204)
-      .location('/')
-      .end()
+    res.status(204).location('/').end()
   })
 )
 
-router.get('/email', collectEmail)
-router.get('/email/confirm/:id', confirmEmail)
+router.post('/email', collectEmail)
+router.get('/email/confirm', authenticateUser, confirmEmail)
 
 module.exports = router

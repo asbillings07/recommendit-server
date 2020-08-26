@@ -3,7 +3,7 @@ notes
 nodemon.json
 .env
 .env
-
+logs
 hidden.env
 .terraform
 package-lock.json
