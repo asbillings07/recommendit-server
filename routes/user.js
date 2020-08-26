@@ -115,7 +115,7 @@ router.delete(
   })
 )
 
-router.get('/email', collectEmail)
+router.post('/email', collectEmail)
 router.get('/email/confirm', authenticateUser, confirmEmail)
 
 module.exports = router
