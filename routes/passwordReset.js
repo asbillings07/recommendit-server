@@ -3,6 +3,7 @@ const express = require('express')
 const router = express.Router()
 const crypto = require('crypto')
 const bcrypt = require('bcryptjs')
+const messages = require('../services/emailMessages')
 const { sendEmail } = require('../services/emailSend')
 const emailTemplate = require('../services/emailTemplates')
 const asyncHandler = require('../services/asyncErrorHanlder')
@@ -24,19 +25,9 @@ router.post(
         resetPasswordToken: token,
         resetPasswordExpires: Date.now() + 36000000
       })
-
-      const email = user.email
-      const passwordResetLink = `https://recommendit.netlify.com/reset/${token}`
-
       // email template with reset link and message
 
-      const mailOptions = emailTemplate.passwordReset(email, passwordResetLink)
-
-      successfulMessage = {
-        message: 'Recovery Email Sent'
-      }
-
-      sendEmail(mailOptions, successfulMessage)
+      sendEmail(emailTemplate.passwordReset(email, token), messages.passwordReset)
 
       res.status(200).json({
         success: true
@@ -64,7 +55,6 @@ router.get(
         message: 'successful'
       })
     } else {
-      console.log('password reset link is invalid or expired')
       res.status(400).json({ error: 'password reset link is invalid or expired' })
     }
   })
@@ -88,7 +78,6 @@ router.put(
           })
         })
         .then(() => {
-          console.log('password updated')
           res.status(200).json({ message: 'password updated successfully!' })
         })
     } else {
