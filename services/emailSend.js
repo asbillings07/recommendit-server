@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer')
 require('dotenv').config()
 const { google } = require('googleapis')
-const config = require('../Config')
+const config = require('../config')
 const OAuth2 = google.auth.OAuth2
 
 // setting up our Oauth2 Client

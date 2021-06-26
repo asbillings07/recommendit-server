@@ -4,7 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
 const Sentry = require('@sentry/node')
-const config = require('./Config')
+const config = require('./config')
 const logger = require('./logger')
 Sentry.init({
   dsn: 'https://646a0f42f7b54b3db2377c78174bdb4f@sentry.io/1726096'
