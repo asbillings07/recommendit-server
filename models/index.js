@@ -13,10 +13,8 @@ const db = {};
 
 let sequelize;
 // checks if any env variable is set
-console.log('config setting', config);
-if (config) {
+if (config.databaseUrl) {
   // if it is use the settings for that
-  console.log('config setting', config);
   sequelize = new Sequelize(config.databaseUrl, {
     rejectUnauthorized: false,
   });
