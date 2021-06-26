@@ -1,4 +1,4 @@
-const config = require('../Config')
+const config = require('../config')
 
 module.exports = {
   confirm: (email) => ({

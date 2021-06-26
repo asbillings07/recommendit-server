@@ -7,7 +7,7 @@ const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 // will look in env or development
 const env = process.env.NODE_ENV || 'production';
-const config = require('../Config')[env];
+const config = require('../config')[env];
 
 const db = {};
 
