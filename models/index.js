@@ -7,16 +7,17 @@ const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 // will look in env or development
 const env = process.env.NODE_ENV || 'production';
-const config = require(__dirname + '/../config/config.json')[env];
+const config = require('../Config')[env];
+
 const db = {};
 
 let sequelize;
 // checks if any env variable is set
 console.log('config setting', config);
-if (config.use_env_variable) {
+if (config) {
   // if it is use the settings for that
   console.log('config setting', config);
-  sequelize = new Sequelize(process.env[config.use_env_variable], {
+  sequelize = new Sequelize(config.databaseUrl, {
     rejectUnauthorized: false,
   });
 } else {
