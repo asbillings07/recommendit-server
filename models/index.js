@@ -12,9 +12,10 @@ const db = {};
 
 let sequelize;
 // checks if any env variable is set
+console.log('config setting', config);
 if (config.use_env_variable) {
   // if it is use the settings for that
-  console.log(config);
+  console.log('config setting', config);
   sequelize = new Sequelize(process.env[config.use_env_variable], {
     rejectUnauthorized: false,
   });
