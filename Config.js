@@ -10,7 +10,7 @@ module.exports = {
   refreshToken: process.env.REFRESH_TOKEN,
 
   development: {
-    databaseUrl: process.env.DEV_DB_URL,
+    databaseUrl: process.env.DB_URL,
     clientOrigin: 'http://localhost:3000' || 'http://localhost:3001',
     port: process.env.PORT || 5000,
     botEmailAddress: process.env.EMAIL_ADDRESS,
