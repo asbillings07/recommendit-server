@@ -1,7 +1,6 @@
 const nodemailer = require('nodemailer')
 require('dotenv').config()
 const { google } = require('googleapis')
-const env = 'local'
 const config = require('../Config')
 const OAuth2 = google.auth.OAuth2
 
@@ -36,7 +35,7 @@ exports.sendEmail = (mailOptions, successfulMessage) => {
     debug: true,
     auth: {
       type: 'OAuth2',
-      user: `${config[env].botEmailAddress}`,
+      user: `${config[config.env].botEmailAddress}`,
       clientId: `${config.googleMailClientId}`,
       clientSecret: `${config.googleMailClientSecret}`,
       refreshToken: `${config.refreshToken}`,
