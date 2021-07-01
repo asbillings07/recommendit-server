@@ -8,64 +8,17 @@ const {
 
 // create category
 
-const createCategory = category =>
-  Category.create({
-    title: category.title,
-  });
+const createCategory = category => Category.create(category);
+
+const createManyCategories = categories => Category.insertMany(categories)
 
 // get category
 
-const getCategories = () =>
-  Category.findAll({
-    include: [
-      {
-        model: Recommendation,
-        include: [
-          {
-            model: Rating,
-            as: 'rating',
-            attributes: {
-              exclude: ['updatedAt', 'createdAt'],
-            },
-          },
-        ],
-        attributes: {
-          exclude: ['createdAt', 'updatedAt'],
-        },
-      },
-    ],
-    attributes: {
-      exclude: ['createdAt', 'updatedAt'],
-    },
-  });
+const getCategories = () => Category.find().exec({});
 
 // get one category
 
-const getCategory = id =>
-  Category.findAll({
-    where: {
-      id,
-    },
-    include: [
-      {
-        model: Recommendation,
-        attributes: {
-          exclude: ['updatedAt', 'createdAt'],
-        },
-        include: [
-          {
-            model: User,
-          },
-          {
-            model: Comment,
-          },
-        ],
-      },
-    ],
-    attributes: {
-      exclude: ['createdAt', 'updatedAt'],
-    },
-  });
+const getCategory = id => Category.findById(id).populate('recommendations')
 
 module.exports = {
   createCategory,

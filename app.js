@@ -1,11 +1,12 @@
 
-const env = process.env.NODE_ENV || 'local'
+const env = process.env.NODE_ENV || 'development'
 const express = require('express')
 const bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
 const Sentry = require('@sentry/node')
 const config = require('./config')
 const logger = require('./logger')
+require('./mongoose')(config[env])
 Sentry.init({
   dsn: 'https://646a0f42f7b54b3db2377c78174bdb4f@sentry.io/1726096'
 })
@@ -90,6 +91,9 @@ app.use('/api', categoryRoute)
 app.use('/api', ratingRoute)
 app.use('/api', passwordReset)
 app.use('/api', commentRoute)
+logger.debug("Overriding 'Express' logger")
+app.use(require('morgan')('combined', { stream: logger.stream }))
+
 
 app.get('/', (req, res, next) => {
   res.json({
@@ -140,6 +144,7 @@ app.use((err, req, res, next) => {
     console.log(err.stack)
   }
 })
+
 
 // sets port
 const PORT = config[env].port
