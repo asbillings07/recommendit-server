@@ -21,13 +21,13 @@ router.get(
   '/category/:id',
   asyncHanlder(async (req, res) => {
     console.log({ Scookies: req.signedCookies.user, cookies: req.cookies })
-    const id = +req.params.id
+    const id = req.params.id
     if (id) {
       const category = await getCategory(id)
       res.status(200).json({ category })
     } else {
       res.status(404).json({
-        error: '404 Not Fount',
+        error: '404 Not Found',
         message: 'Category not found at selected route'
       })
     }
