@@ -6,7 +6,7 @@ const {
 } = require('../services/commentFunctions');
 const { comments } = require('./mockData');
 
-describe('Comment Model Functions', () => {
+xdescribe('Comment Model Functions', () => {
   it('should create a comment and return it from the DB', async () => {
     const recid = 4;
     const user = {

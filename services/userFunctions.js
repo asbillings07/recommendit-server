@@ -1,14 +1,34 @@
 const { User, Recommendation } = require('../models')
 const bcrypt = require('bcryptjs')
+const { saltRounds } = require('../config')
+
+const createSaltHash = async (text, size) => {
+  try {
+    const salt = await bcrypt.genSalt(size);
+    return await bcrypt.hash(text, salt);
+  } catch (err) {
+    return err
+  }
+}
+
+const findUserByObj = obj =>
+  User.findOne(obj).populate('recommendations').select('-password')
 
 // creates user and hashes password
-const createUser = user => {
-  return User.create({
-    firstName: user.firstName,
-    lastName: user.lastName,
-    email: user.email,
-    password: bcrypt.hashSync(user.password)
-  })
+const createUser = async user => {
+  const checkedUser = findUserByObj({ email: user.email })
+  if (!checkedUser) {
+    const hashedPassword = await createSaltHash(user.password, saltRounds)
+    return User.create({
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      password: hashedPassword
+    })
+  } else {
+    throw new Error('email has already been taken!')
+  }
+
 }
 
 // Finds authed user by id then updates user and hashes password if needed
@@ -49,8 +69,7 @@ const findUserByToken = token =>
 const findUserById = id =>
   User.findOne({ _id: id }).select('-password')
 
-const findUserByObj = obj =>
-  User.findOne({ obj }).populate('recommendations').select('-password')
+
 
 
 module.exports = {

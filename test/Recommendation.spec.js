@@ -1,20 +1,15 @@
-const {
-  createRec,
-  getAllRecs,
-  getRecWithUser,
-  updateRecs,
-  deleteRecs,
-} = require('../services/recommendationFunctions');
-
+const mockingoose = require('mockingoose')
+const { Recommendation } = require('../models')
 const { recommendations } = require('./mockData');
 
-describe('Recommendation Model Functions', () => {
+xdescribe('Recommendation Model Functions', () => {
   test('should create a recommendation', async () => {
-    const id = 1;
-    const user = {
-      id: 12,
-    };
-    const rec = recommendations[0];
+    const _doc = {
+      title: 'Hardees',
+      description: 'it is a great place'
+    }
+
+    mockingoose(user).toReturn(_doc, 'create')
 
     const recommendation = await createRec(user, rec, id);
     expect(recommendation.title).not.toBeUndefined();
