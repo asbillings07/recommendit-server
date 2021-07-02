@@ -51,6 +51,7 @@
   "devDependencies": {
     "faker": "^4.1.0",
     "jest": "^24.9.0",
+    "mockingoose": "^2.15.2",
     "sequelize-mock": "^0.10.2"
   }
 }
