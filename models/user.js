@@ -9,6 +9,7 @@ const userSchema = new Schema(
     password: { type: String, required: [true, 'password required'] },
     city: String,
     state: String,
+    zip: Number,
     resetPasswordExpires: String,
     resetPasswordToken: String,
     confirmed: String,

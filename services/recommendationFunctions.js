@@ -1,20 +1,22 @@
-const { Recommendation, User, Rating, Comment } = require('../models');
-
+const { Recommendation, User, Rating, Comment, Category } = require('../models');
+const { createAddModel } = require('./createAddModel')
 // verifies user by checking the recommendation where the recommendation id is equal to the param id
 const verifyUser = id =>
   Recommendation.findById(id);
 
 // create recommendation
 
-const createRec = (user, rec, id) =>
-  Recommendation.create({
+const createRec = (user, rec, id) => {
+  const data = {
     categoryId: id,
     userid: user.id,
     title: rec.title,
     description: rec.description,
     location: rec.location,
-    lastvisited: rec.lastvisited,
-  });
+    lastVisited: rec.lastVisited,
+  }
+  return createAddModel(Category, id, Recommendation, data, 'recommendations')
+}
 
 // get all Recommendations including User and Rating
 
@@ -29,13 +31,7 @@ const getRecWithUser = id =>
 
 // Update one Recommendation by Id
 const updateRecs = (id, body) =>
-  Recommendation.updateOne({ _id: id }, {
-    categoryId: body.categoryId,
-    title: body.title,
-    description: body.description,
-    location: body.location,
-    lastVisited: body.lastVisited,
-  })
+  Recommendation.updateOne({ _id: id }, body)
 
 // Delete Recommendation by Id
 const deleteRecs = id =>

@@ -57,8 +57,9 @@ router.post(
     const user = req.user
     const rec = req.body
     const recs = await createRec(user, rec, id)
+    console.log('recs', recs)
     if (recs) {
-      res.status(204).end()
+      res.status(201).json(recs)
     } else {
       res.status(404).json({
         error: '404 Not Found',

@@ -32,26 +32,16 @@ const createUser = async user => {
 }
 
 // Finds authed user by id then updates user and hashes password if needed
-const updateUser = (id, body) =>
-  User.updateOne({ _id: id }, {
-    firstName: body.firstName,
-    lastName: body.lastName,
-    email: body.email
-  })
-
-const updateUserPhoto = (id, body) =>
-  User.updateOne({ _id: id }, {
-    photoName: body.photoName,
-    imageId: body.photoUrl
-  })
+const updateUser = async (id, body) => {
+  await User.updateOne({ _id: id }, body)
+  return await User.findById(id)
+}
 
 // finds an authed user id then deletes a user
 const deleteUser = currentUser =>
-  User.findOne({
-    where: {
-      id: currentUser.id
-    }
-  }).then(user => user.destroy())
+  User.deleteOne({
+    id: currentUser._id
+  })
 
 // find user by email
 
@@ -79,6 +69,5 @@ module.exports = {
   findUserByEmail,
   findUserByToken,
   findUserById,
-  findUserByObj,
-  updateUserPhoto
+  findUserByObj
 }

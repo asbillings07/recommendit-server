@@ -15,7 +15,7 @@ const {
   updateUser,
   findUserByEmail,
   findUserByObj,
-  updateUserPhoto
+  findUserById
 } = require('../services/userFunctions')
 
 // Authentication Route
@@ -58,7 +58,7 @@ router.get(
   authenticateUser,
   asyncHandler(async (req, res) => {
     const { id } = req.user
-    const user = await findUserByObj({ id })
+    const user = await findUserByObj({ _id: id })
     res.status(200).json(user)
   })
 )
@@ -85,23 +85,12 @@ router.put(
   '/users',
   validateUpdateUser,
   authenticateUser,
-  collectEmail,
   asyncHandler(async (req, res) => {
     const { id } = req.user
     const body = req.body
-    await updateUser(id, body)
-    res.status(204).end()
-  })
-)
+    const user = await updateUser(id, body)
 
-router.post(
-  '/userphoto',
-  authenticateUser,
-  asyncHandler(async (req, res) => {
-    const { id } = req.user
-    const body = req.body
-    await updateUserPhoto(id, body)
-    res.status(204).end()
+    res.status(201).json(user)
   })
 )
 // DELETE (Careful, this deletes users from the DB) /api/users 204 - deletes a user, sets the location to '/', and returns no content

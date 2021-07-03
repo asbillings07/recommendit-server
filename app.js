@@ -36,10 +36,10 @@ const jwtOptions = {
 exports.jwtOptions = jwtOptions
 // create Strategy for passport
 const strategy = new JWTstrategy(jwtOptions, async (jwt_payload, next) => {
-  console.log('pay load recived!', jwt_payload)
-  const user = await findUserByObj({ id: jwt_payload.id })
+  console.log('pay load recived!')
+  const user = await findUserByObj({ _id: jwt_payload.id })
   if (user) {
-    next(null, user)
+    next(null, user, null)
   } else {
     next(null, false, info.message)
   }

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const recommendationSchema = new Schema(
   {
-    categoryId: Number,
+    categoryId: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: [true, 'categoryId required'] },
     userid: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: [true, 'userId required'] },
     title: { type: String, required: true },
     description: { type: String, required: true },
