@@ -1,17 +1,19 @@
 const mockingoose = require('mockingoose')
-const { Recommendation } = require('../models')
+const recommendation = require('../models/recommendation')
 const { recommendations } = require('./mockData');
 
 xdescribe('Recommendation Model Functions', () => {
   test('should create a recommendation', async () => {
     const _doc = {
+      userid: '123ddk93hd93',
       title: 'Hardees',
-      description: 'it is a great place'
+      description: 'it is a great place',
+      location: '123 main street'
     }
 
-    mockingoose(user).toReturn(_doc, 'create')
+    mockingoose(recommendation).toReturn(_doc, 'create')
 
-    const recommendation = await createRec(user, rec, id);
+    const rec = await recommendation.create(_doc);
     expect(recommendation.title).not.toBeUndefined();
     expect(recommendation.description).not.toBeUndefined();
     expect(recommendation.location).not.toBeUndefined();
