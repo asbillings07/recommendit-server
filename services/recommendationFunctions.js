@@ -9,7 +9,7 @@ const verifyUser = id =>
 const createRec = (user, rec, id) => {
   const data = {
     categoryId: id,
-    userid: user.id,
+    user: user.id,
     title: rec.title,
     description: rec.description,
     location: rec.location,
@@ -26,7 +26,7 @@ const getAllRecs = () =>
 
 // get one Recommendation with id and include User and Ratings
 const getRecWithUser = id =>
-  Recommendation.findById(id).populate('users').populate('ratings').populate('comments')
+  Recommendation.findById(id).populate('user').populate('ratings').populate('comments')
 
 
 // Update one Recommendation by Id

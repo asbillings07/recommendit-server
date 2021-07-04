@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { authenticateUser } = require('../app')
+const { authenticateToken } = require('../auth')
 const { validateRecommendation } = require('../services/validationChain')
 const asyncHandler = require('../services/asyncErrorHanlder')
 const {
@@ -34,7 +34,7 @@ router.get(
 router.get(
   '/recs/:id',
   asyncHandler(async (req, res) => {
-    const id = +req.params.id
+    const id = req.params.id
     const rec = await getRecWithUser(id)
     if (rec) {
       res.status(200).json(rec)
@@ -50,14 +50,13 @@ router.get(
 //POST /recs status: 201 - Creates a recommendation, sets the Location header to the URI for the recommendation, and returns no content
 router.post(
   '/recs/category/:id',
-  authenticateUser,
+  authenticateToken,
   validateRecommendation,
   asyncHandler(async (req, res) => {
     const id = req.params.id
     const user = req.user
     const rec = req.body
     const recs = await createRec(user, rec, id)
-    console.log('recs', recs)
     if (recs) {
       res.status(201).json(recs)
     } else {
@@ -73,15 +72,15 @@ router.post(
 router.put(
   '/recs/:id',
   validateRecommendation,
-  authenticateUser,
+  authenticateToken,
   asyncHandler(async (req, res) => {
-    const id = +req.params.id
+    const id = req.params.id
     const user = req.user
     const rec = req.body
     const authedUser = await verifyUser(id)
-    if (authedUser.userid === user.id) {
-      recommendation = await updateRecs(id, rec)
-      res.status(204).json(recommendation)
+    if (authedUser.user === user.id) {
+      const recommendation = await updateRecs(id, rec)
+      res.status(200).json(recommendation)
     } else {
       res.status(401).json({
         message: 'You can not edit recommendations that you do not own.'
@@ -92,12 +91,12 @@ router.put(
 //DELETE - recs/:id status: 204 - deletes a recommendation if user owns it. Careful, this can not be undone. Deletes a recommendation and returns no content
 router.delete(
   '/recs/:id',
-  authenticateUser,
+  authenticateToken,
   asyncHandler(async (req, res) => {
-    const id = +req.params.id
+    const id = req.params.id
     const user = req.user
     const authedUser = await verifyUser(id)
-    if (authedUser.userid === user.id) {
+    if (authedUser.user === user.id) {
       if (await findRatingByRecId(id)) {
         await deleteRating(id)
         await deleteRecs(id)

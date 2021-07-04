@@ -16,15 +16,16 @@ const findUserByObj = obj =>
 
 // creates user and hashes password
 const createUser = async user => {
-  const checkedUser = findUserByObj({ email: user.email })
+  const checkedUser = await findUserByObj({ email: user.email })
   if (!checkedUser) {
     const hashedPassword = await createSaltHash(user.password, saltRounds)
-    return User.create({
+    const createdUser = new User({
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
       password: hashedPassword
     })
+    return createdUser.save()
   } else {
     throw new Error('email has already been taken!')
   }

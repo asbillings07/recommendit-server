@@ -1,29 +1,31 @@
-const { Comment } = require('../models');
+const { Comment, Recommendation } = require('../models');
 
 // verifies user by checking the comment where the recommendation id is equal to the param id
 const verifyUser = id =>
   Comment.findOne({
-    recid: id,
+    rec: id,
   });
 
 // create comment
-const createComment = (id, body, user) =>
-  Comment.create({
+const createComment = (id, body, user) => {
+  const data = {
     comment: body.comment,
-    recid: id,
-    userid: user._id,
-  });
+    rec: id,
+    user: user._id,
+  }
+  return createAddModel(Recommendation, id, Comment, data, 'comments')
+}
 // update comment
 const updateComment = (id, body) =>
-  Comment.updateOne({ recid: id }, {
+  Comment.updateOne({ rec: id }, {
     comment: body.comment,
   }
   );
 // gets comment
-const getComment = id => Comment.findOne({ recid: id });
+const getComment = id => Comment.findOne({ rec: id });
 // deletes comment
 const deleteComment = id =>
-  Comment.deleteOne({ recid: id })
+  Comment.deleteOne({ rec: id })
 
 module.exports = {
   createComment,

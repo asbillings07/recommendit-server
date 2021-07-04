@@ -39,8 +39,8 @@ router.post(
   validateCategory,
   asyncHanlder(async (req, res) => {
     const category = req.body
-    await createCategory(category)
-    res.status(201).end()
+    const newCate = await createCategory(category)
+    res.status(201).json(newCate)
   })
 )
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { authenticateUser } = require('../app');
+const { authenticateToken } = require('../auth')
 const { validateComment } = require('../services/validationChain');
 const asyncHanlder = require('../services/asyncErrorHanlder');
 const {
@@ -13,7 +13,7 @@ const { verifyUser } = require('../services/commentFunctions');
 // POST /rec/comment status: 201 - creating a new rating for a given recommendation
 router.post(
   '/rec/:id/comment',
-  authenticateUser,
+  authenticateToken,
   validateComment,
   asyncHanlder(async (req, res) => {
     const body = req.body;
@@ -30,7 +30,7 @@ router.post(
 
 router.put(
   '/rec/:id/comment',
-  authenticateUser,
+  authenticateToken,
   validateComment,
   asyncHanlder(async (req, res) => {
     const body = req.body;
@@ -39,7 +39,7 @@ router.put(
 
     const authedUser = await verifyUser(id);
 
-    if (authedUser.userid === user.id) {
+    if (authedUser.user === user.id) {
       await updateComment(id, body);
       res.status(201).end();
     } else {
@@ -52,14 +52,14 @@ router.put(
 
 router.delete(
   '/rec/:id/comment',
-  authenticateUser,
+  authenticateToken,
   asyncHanlder(async (req, res) => {
-    const id = +req.params.id;
+    const id = req.params.id;
     const user = req.user;
     const authedUser = await verifyUser(id);
     console.log(authedUser);
 
-    if (authedUser.userid === user.id) {
+    if (authedUser.user === user.id) {
       await deleteComment(id);
       res.status(204).end();
     } else {

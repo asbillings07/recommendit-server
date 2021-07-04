@@ -1,4 +1,4 @@
-const { authenticateUser } = require('../app')
+const { authenticateToken } = require('../auth')
 const express = require('express')
 const router = express.Router()
 const { validateRating } = require('../services/validationChain')
@@ -12,7 +12,7 @@ const {
 } = require('../services/ratingFunctions')
 
 // GET /rating status 200 - gets all ratings for user
-router.get('/rating', authenticateUser, async (req, res) => {
+router.get('/rating', authenticateToken, async (req, res) => {
   const userId = req.user.id
   const ratings = await getRatings(userId)
   res.status(200).json(ratings)
@@ -20,30 +20,20 @@ router.get('/rating', authenticateUser, async (req, res) => {
 // POST /rating/recs/:id status: 201 - creating a new rating for a given recommendation
 router.post(
   '/rating/recs/:id',
-  authenticateUser,
+  authenticateToken,
   validateRating,
   asyncHandler(async (req, res) => {
     const body = req.body
-    const id = +req.params.id
+    const id = req.params.id
     const user = req.user
-    const rating = await findRatingByRecId(id)
-    console.log(rating)
-    await createRating(id, user, body)
-    res.status(201).end()
-    // if (rating.userid !== user.id) {
-
-    // } else {
-    //   res.status(403).json({
-    //     message:
-    //       'You can not rate or comment on the same recommendation twice. Give someone else a turn.',
-    //   });
-    // }
+    const rating = await createRating(id, user, body)
+    res.status(201).json(rating)
   })
 )
 // PUT /rating/recs/:id - status: 204 - updates a rating for an existing recommendaion if the user owns the rating - returns no content.
 router.put(
   '/rating/recs/:id',
-  authenticateUser,
+  authenticateToken,
   validateRating,
   asyncHandler(async (req, res) => {
     const { body, params, user } = req
@@ -72,12 +62,12 @@ router.put(
 // DELETE /rating/recs/:id - status: 204 - deletes a rating for an existing recommendaion if the user owns the rating - returns no content.
 router.delete(
   '/rating/recs/:id',
-  authenticateUser,
+  authenticateToken,
   asyncHandler(async (req, res) => {
-    const id = +req.params.id
+    const id = req.params.id
     const user = req.user
     const rating = await findRatingByRecId(id)
-    if (rating.userid === user.id) {
+    if (rating.user === user.id) {
       await deleteRating(id)
       res.status(204).end()
     } else {

@@ -1,13 +1,14 @@
 const createAddModel = async (topModel, topModelId, insertModel, data, prop) => {
     try {
-        const doc = await insertModel.create(data)
-        console.log('created:', doc)
+        const createdDoc = await new insertModel(data)
+        const savedDoc = await createdDoc.save()
+        console.log('created:', savedDoc)
         await topModel.findByIdAndUpdate(
             topModelId,
-            { $push: { [prop]: doc._id } },
+            { $push: { [prop]: savedDoc._id } },
             { new: true, useFindAndModify: false }
         )
-        return doc
+        return savedDoc
         // res.status(201).json({
         //     success: true,
         //     error: false,

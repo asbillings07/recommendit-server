@@ -5,7 +5,7 @@ function asyncHandler (cb) {
       await cb(req, res, next)
     } catch (err) {
       res.json({ error: err.message })
-      console.log(err)
+      console.log('ERROR', err)
     }
   }
 }

@@ -3,9 +3,7 @@ require('dotenv').config()
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 const config = require('../config')
-const jwt = require('jsonwebtoken')
-const { authenicateToken } = require('../services/authToken')
-const { authenticateUser } = require('../app')
+const { createToken, authenticateToken } = require('../auth')
 const { validateUser, validateUpdateUser } = require('../services/validationChain')
 const { collectEmail, confirmEmail } = require('../services/emailController')
 const asyncHandler = require('../services/asyncErrorHanlder')
@@ -35,7 +33,7 @@ router.post(
           photo: user.photo
         }
 
-        const token = jwt.sign(authUser, config.jwtSecret)
+        const token = createToken(authUser)
         res.cookie('user', authUser, { signed: true })
         res.json({
           message: 'ok',
@@ -55,7 +53,7 @@ router.post(
 // GET /api/users 200 - Returns the currently authenticated user
 router.get(
   '/users',
-  authenticateUser,
+  authenticateToken,
   asyncHandler(async (req, res) => {
     const { id } = req.user
     const user = await findUserByObj({ _id: id })
@@ -84,7 +82,7 @@ router.post(
 router.put(
   '/users',
   validateUpdateUser,
-  authenticateUser,
+  authenticateToken,
   asyncHandler(async (req, res) => {
     const { id } = req.user
     const body = req.body
@@ -96,7 +94,7 @@ router.put(
 // DELETE (Careful, this deletes users from the DB) /api/users 204 - deletes a user, sets the location to '/', and returns no content
 router.delete(
   '/users',
-  authenticateUser,
+  authenticateToken,
   asyncHandler(async (req, res) => {
     const { user } = req
     await deleteUser(user)
@@ -105,6 +103,6 @@ router.delete(
 )
 
 router.post('/email', collectEmail)
-router.get('/email/confirm', authenticateUser, confirmEmail)
+router.get('/email/confirm', authenticateToken, confirmEmail)
 
 module.exports = router

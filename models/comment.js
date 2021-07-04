@@ -7,15 +7,15 @@ const commentSchema = new Schema(
       type: String,
       required: [true, 'comment required']
     },
-    recid: {
+    rec: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Recommendation',
       required: [true, 'recommendation Id required for this comment']
     },
-    userid: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      required: [true, 'recommendation Id required for this comment']
+      required: [true, 'user Id required for this comment']
     }
   },
   {

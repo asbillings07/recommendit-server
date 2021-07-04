@@ -4,12 +4,12 @@ const Schema = mongoose.Schema
 const ratingSchema = new Schema(
   {
     rating: Number,
-    recid: {
+    rec: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Recommendation',
       required: [true, 'recommendation Id required for this rating']
     },
-    userid: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: [true, 'user Id required for this rating']
