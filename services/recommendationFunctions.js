@@ -30,12 +30,13 @@ const getRecWithUser = id =>
 
 
 // Update one Recommendation by Id
-const updateRecs = (id, body) =>
-  Recommendation.updateOne({ _id: id }, body)
+const updateRecs = async (id, body) => {
+  return Recommendation.findByIdAndUpdate({ _id: id }, body, { new: true })
+}
 
 // Delete Recommendation by Id
 const deleteRecs = id =>
-  Recommendation.findOne({ _id: id })
+  Recommendation.deleteOne({ _id: id })
 
 module.exports = {
   getAllRecs,

@@ -13,18 +13,16 @@ const getRatings = (id) => Rating.find({ user: id })
 // creates a rating on a given recommendation
 const createRating = (id, user, body) => {
   const data = {
-    rate: body.rate,
+    rating: body.rating,
     rec: id,
-    user: user._id
+    user: user.id
   }
   return createAddModel(Recommendation, id, Rating, data, 'ratings')
 }
 
 // updates rating on a given recommendation for user
 const updateRating = (id, body) =>
-  Rating.updateOne({ rec: id }, {
-    rate: body.rate
-  })
+  Rating.findByIdAndUpdate({ _id: id }, body, { new: true })
 // deletes a rating along with their comments for user.
 const deleteRating = (id) =>
   Rating.deleteOne({ rec: id })

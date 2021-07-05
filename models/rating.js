@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const ratingSchema = new Schema(
   {
-    rating: Number,
+    rating: { type: Number, required: true },
     rec: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Recommendation',

@@ -8,7 +8,8 @@ const {
   findRatingByRecId,
   updateRating,
   deleteRating,
-  getRatings
+  getRatings,
+  getRating
 } = require('../services/ratingFunctions')
 
 // GET /rating status 200 - gets all ratings for user
@@ -38,19 +39,12 @@ router.put(
   asyncHandler(async (req, res) => {
     const { body, params, user } = req
     const { id } = params
-    const rating = await findRatingByRecId(id)
+    const rating = await getRating(id)
 
     if (user) {
       if (rating !== null) {
-        await updateRating(id, body)
-        res.status(200).json({
-          message: 'rating updated!'
-        })
-      } else {
-        await createRating(id, user, body)
-        res.status(200).json({
-          message: 'rating created!'
-        })
+        const updatedRating = await updateRating(rating.id, body)
+        res.status(200).json(updatedRating)
       }
     } else {
       res.status(403).json({

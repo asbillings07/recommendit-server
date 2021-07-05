@@ -15,7 +15,7 @@ const createToken = (user) => {
   });
 
   return {
-    token: "Bearer " + signedToken,
+    token: signedToken,
     expires: exp,
   };
 };

@@ -17,10 +17,7 @@ const createComment = (id, body, user) => {
 }
 // update comment
 const updateComment = (id, body) =>
-  Comment.updateOne({ rec: id }, {
-    comment: body.comment,
-  }
-  );
+  Comment.findByIdAndUpdate({ rec: id }, body, { new: true })
 // gets comment
 const getComment = id => Comment.findOne({ rec: id });
 // deletes comment

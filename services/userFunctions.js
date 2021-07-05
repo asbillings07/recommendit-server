@@ -33,9 +33,8 @@ const createUser = async user => {
 }
 
 // Finds authed user by id then updates user and hashes password if needed
-const updateUser = async (id, body) => {
-  await User.updateOne({ _id: id }, body)
-  return await User.findById(id)
+const updateUser = (id, body) => {
+  return User.findByIdAndUpdate({ _id: id }, body, { new: true })
 }
 
 // finds an authed user id then deletes a user

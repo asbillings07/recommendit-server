@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const { isObjectEqual } = require('../models/MongoFunctions/isObjectEqual')
 const { authenticateToken } = require('../auth')
 const { validateRecommendation } = require('../services/validationChain')
 const asyncHandler = require('../services/asyncErrorHanlder')
@@ -78,7 +79,7 @@ router.put(
     const user = req.user
     const rec = req.body
     const authedUser = await verifyUser(id)
-    if (authedUser.user === user.id) {
+    if (isObjectEqual(authedUser.user, user.id)) {
       const recommendation = await updateRecs(id, rec)
       res.status(200).json(recommendation)
     } else {
@@ -96,15 +97,14 @@ router.delete(
     const id = req.params.id
     const user = req.user
     const authedUser = await verifyUser(id)
-    if (authedUser.user === user.id) {
+    if (isObjectEqual(authedUser.user, user.id)) {
       if (await findRatingByRecId(id)) {
         await deleteRating(id)
         await deleteRecs(id)
         res.status(204).end()
       } else {
-        res.status(500).json({
-          message: 'an error occurred when trying to delete this recommendation'
-        })
+        await deleteRecs(id)
+        res.status(200).json({ message: 'recommendation deleted' })
       }
     } else {
       res.status(401).json({
