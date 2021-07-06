@@ -9,7 +9,8 @@ const {
   updateRating,
   deleteRating,
   getRatings,
-  getRating
+  getRating,
+  isRatingAuthUser
 } = require('../services/mongoFunctions')
 
 // GET /rating status 200 - gets all ratings for user
@@ -41,14 +42,14 @@ router.put(
     const { ratingId } = body
     const rating = await getRating(ratingId)
 
-    if (user) {
+    if (isRatingAuthUser(ratingId, user)) {
       if (rating !== null) {
         const updatedRating = await updateRating(rating.id, body)
         res.status(200).json(updatedRating)
       }
     } else {
       res.status(403).json({
-        message: 'You can not edit ratings or comments if you are not logged in'
+        message: 'You can not edit ratings that do not belong to you'
       })
     }
   })
@@ -60,9 +61,8 @@ router.delete(
   asyncErrorHandler(async (req, res) => {
     const { user, body } = req
     const { ratingId } = body
-    const rating = await getRating(ratingId)
 
-    if (isObjectEqual(rating.user, user.id)) {
+    if (isRatingAuthUser(ratingId, user)) {
       await deleteRating(ratingId)
       res.status(200).json('rating deleted!')
     } else {

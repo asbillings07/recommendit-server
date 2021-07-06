@@ -1,8 +1,11 @@
 const { Recommendation, User, Rating, Comment, Category } = require('../../models');
 const { createAddModel } = require('../createAddModel')
+const { isObjectEqual } = require('../../models/MongoFunctions/isObjectEqual')
 // verifies user by checking the recommendation where the recommendation id is equal to the param id
-const verifyRecUser = id =>
-  Recommendation.findById(id);
+const isRecAuthUser = async (id, user) => {
+  const recUser = await Recommendation.findById(id)
+  return isObjectEqual(recUser.user, user.id)
+}
 
 // create recommendation
 
@@ -21,7 +24,7 @@ const createRec = (user, rec, id) => {
 // get all Recommendations including User and Rating
 
 const getAllRecs = () =>
-  Recommendation.find({}).populate('users').populate('ratings').populate('comments')
+  Recommendation.find({}).populate('user').populate('ratings').populate('comments').select('-password')
 
 
 // get one Recommendation with id and include User and Ratings
@@ -44,5 +47,5 @@ module.exports = {
   createRec,
   updateRecs,
   deleteRecs,
-  verifyRecUser,
+  isRecAuthUser,
 };

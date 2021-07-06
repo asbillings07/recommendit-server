@@ -64,9 +64,10 @@ router.post(
   '/users',
   validateUser,
   asyncErrorHandler(async (req, res) => {
-    const user = req.body
-    const newUser = await createUser(user)
+    const { body } = req
+    const newUser = await createUser(body)
     const authedUser = newUser.dataValues
+
     res.cookie('user', authedUser, { signed: true })
     res
       .location('/')
@@ -83,11 +84,10 @@ router.put(
   validateUpdateUser,
   authenticateToken,
   asyncErrorHandler(async (req, res) => {
-    const { id } = req.user
-    const body = req.body
-    const user = await updateUser(id, body)
+    const { user, body } = req
+    const updatedUser = await updateUser(user.id, body)
 
-    res.status(201).json(user)
+    res.status(201).json(updatedUser)
   })
 )
 // DELETE (Careful, this deletes users from the DB) /api/users 204 - deletes a user, sets the location to '/', and returns no content
@@ -96,7 +96,7 @@ router.delete(
   authenticateToken,
   asyncErrorHandler(async (req, res) => {
     const { user } = req
-    await deleteUser(user)
+    await deleteUser(user.id)
     res.status(204).location('/').end()
   })
 )

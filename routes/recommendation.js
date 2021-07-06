@@ -10,7 +10,7 @@ const {
   deleteRecs,
   getRecWithUser,
   getRecWithRating,
-  verifyUser
+  isRecAuthUser
 } = require('../services/mongoFunctions')
 const { findRatingByRecId, deleteRating } = require('../services/mongoFunctions/ratingFunctions')
 
@@ -34,7 +34,7 @@ router.get(
 router.get(
   '/recs/:id',
   asyncErrorHandler(async (req, res) => {
-    const id = req.params.id
+    const { id } = req.params
     const rec = await getRecWithUser(id)
     if (rec) {
       res.status(200).json(rec)
@@ -53,10 +53,10 @@ router.post(
   authenticateToken,
   validateRecommendation,
   asyncErrorHandler(async (req, res) => {
-    const id = req.params.id
-    const user = req.user
-    const rec = req.body
-    const recs = await createRec(user, rec, id)
+    const { body, user, params } = req
+    const { id } = params
+
+    const recs = await createRec(user, body, id)
     if (recs) {
       res.status(201).json(recs)
     } else {
@@ -68,18 +68,18 @@ router.post(
   })
 )
 
+
 //PUT /recs/:id status: 204 - Updates a recommendation if the user owns it, and returns no content
 router.put(
   '/recs/:id',
   validateRecommendation,
   authenticateToken,
   asyncErrorHandler(async (req, res) => {
-    const id = req.params.id
-    const user = req.user
-    const rec = req.body
-    const authedUser = await verifyUser(id)
-    if (isObjectEqual(authedUser.user, user.id)) {
-      const recommendation = await updateRecs(id, rec)
+    const { body, user, params } = req
+    const { id } = params
+
+    if (await isRecAuthUser(id, user)) {
+      const recommendation = await updateRecs(id, body)
       res.status(200).json(recommendation)
     } else {
       res.status(401).json({
@@ -93,10 +93,10 @@ router.delete(
   '/recs/:id',
   authenticateToken,
   asyncErrorHandler(async (req, res) => {
-    const id = req.params.id
-    const user = req.user
-    const authedUser = await verifyUser(id)
-    if (isObjectEqual(authedUser.user, user.id)) {
+    const { params, user } = req
+    const { id } = params
+
+    if (await isRecAuthUser(id, user)) {
       if (await findRatingByRecId(id)) {
         await deleteRating(id)
         await deleteRecs(id)

@@ -1,5 +1,11 @@
 const { Rating, User, Recommendation } = require('../../models')
 const { createAddModel } = require('../createAddModel')
+const { isObjectEqual } = require('../../models/MongoFunctions/isObjectEqual')
+
+const isRatingAuthUser = async (id, user) => {
+  const ratingUser = await Rating.findById(id)
+  return isObjectEqual(ratingUser.user, user.id)
+}
 
 // verifies user by checking the rating where the recommendation id is equal to the param id
 const findRatingByRecId = (id) =>
@@ -25,7 +31,7 @@ const updateRating = (id, body) =>
   Rating.findByIdAndUpdate({ _id: id }, body, { new: true })
 // deletes a rating along with their comments for user.
 const deleteRating = (id) =>
-  Rating.deleteOne({ rec: id })
+  Rating.deleteOne({ _id: id })
 
 module.exports = {
   createRating,
@@ -33,5 +39,6 @@ module.exports = {
   updateRating,
   deleteRating,
   getRatings,
-  getRating
+  getRating,
+  isRatingAuthUser
 }

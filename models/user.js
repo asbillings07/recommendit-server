@@ -6,7 +6,7 @@ const userSchema = new Schema(
     firstName: { type: String, required: [true, 'First name required'] },
     lastName: { type: String, required: [true, 'Last name required'] },
     email: { type: String, unique: true, required: [true, 'email required'] },
-    password: { type: String, required: [true, 'password required'] },
+    password: { type: String, required: [true, 'password required'], select: false },
     city: String,
     state: String,
     zip: Number,

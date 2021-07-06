@@ -1,6 +1,6 @@
 const { User, Recommendation } = require('../../models')
 const bcrypt = require('bcryptjs')
-const { saltRounds } = require('../../config')
+const { saltRounds } = require('../../config');
 
 const createSaltHash = async (text, size) => {
   try {
@@ -37,16 +37,21 @@ const updateUser = (id, body) => {
   return User.findByIdAndUpdate({ _id: id }, body, { new: true })
 }
 
+const addSavedRecommendation = (recId, userId) => User.findByIdAndUpdate(
+  { _id: userId },
+  { $push: { ['savedRecommendations']: recId } },
+  { new: true, useFindAndModify: false }
+)
+
 // finds an authed user id then deletes a user
-const deleteUser = currentUser =>
+const deleteUser = id =>
   User.deleteOne({
-    id: currentUser._id
+    _id: id
   })
 
 // find user by email
-
 const findUserByEmail = email =>
-  User.findOne({ email })
+  User.findOne({ email }).select("+password")
 // find user by ForgotPasswordToken
 const findUserByToken = token =>
   User.findOne({
@@ -57,7 +62,7 @@ const findUserByToken = token =>
   })
 
 const findUserById = id =>
-  User.findOne({ _id: id }).select('-password')
+  User.findOne({ _id: id })
 
 
 
@@ -69,5 +74,6 @@ module.exports = {
   findUserByEmail,
   findUserByToken,
   findUserById,
-  findUserByObj
+  findUserByObj,
+  addSavedRecommendation
 }

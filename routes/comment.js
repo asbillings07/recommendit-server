@@ -8,7 +8,8 @@ const {
   createComment,
   updateComment,
   deleteComment,
-  verifyCommentUser
+  getComment,
+  isCommentAuthUser
 } = require('../services/mongoFunctions');
 
 // POST /rec/comment status: 201 - creating a new rating for a given recommendation
@@ -17,12 +18,12 @@ router.post(
   authenticateToken,
   validateComment,
   asyncErrorHandler(async (req, res) => {
-    const body = req.body;
-    const id = req.params.id;
-    const user = req.user;
+    const { body, params, user } = req
+    const { id } = params;
+
     const comment = await createComment(id, body, user);
     if (comment) {
-      res.status(201).end();
+      res.status(201).json(comment);
     } else {
       res.status(404).json({ error: '404 Not found' });
     }
@@ -34,15 +35,12 @@ router.put(
   authenticateToken,
   validateComment,
   asyncErrorHandler(async (req, res) => {
-    const body = req.body;
-    const id = req.params.id;
-    const user = req.user;
+    const { body, user } = req
+    const { commentId } = body
 
-    const authedUser = await verifyCommentUser(id);
-
-    if (isObjectEqual(authedUser.user, user.id)) {
-      await updateComment(id, body);
-      res.status(201).end();
+    if (await isCommentAuthUser(commentId, user)) {
+      const updatedComment = await updateComment(commentId, body);
+      res.status(201).json(updatedComment);
     } else {
       res
         .status(403)
@@ -55,14 +53,12 @@ router.delete(
   '/rec/:id/comment',
   authenticateToken,
   asyncErrorHandler(async (req, res) => {
-    const id = req.params.id;
-    const user = req.user;
-    const authedUser = await verifyCommentUser(id);
-    console.log(authedUser);
+    const { body, user } = req
+    const { commentId } = body;
 
-    if (authedUser.user === user.id) {
-      await deleteComment(id);
-      res.status(204).end();
+    if (await isCommentAuthUser(commentId, user)) {
+      await deleteComment(commentId);
+      res.status(200).json({ message: 'comment deleted!' });
     } else {
       res.status(403).json({
         message: 'You can not delete recommendations that you do not own',
@@ -71,7 +67,7 @@ router.delete(
   })
 );
 
-// GET /comment status 200 - gets all comments for a recommendation
+// GET /comment status 200 - gets all comments for a user
 // router.get('comment', async (req, res) => {});
 
 module.exports = router;
