@@ -1,7 +1,7 @@
-const { Recommendation, User, Rating, Comment, Category } = require('../models');
-const { createAddModel } = require('./createAddModel')
+const { Recommendation, User, Rating, Comment, Category } = require('../../models');
+const { createAddModel } = require('../createAddModel')
 // verifies user by checking the recommendation where the recommendation id is equal to the param id
-const verifyUser = id =>
+const verifyRecUser = id =>
   Recommendation.findById(id);
 
 // create recommendation
@@ -44,5 +44,5 @@ module.exports = {
   createRec,
   updateRecs,
   deleteRecs,
-  verifyUser,
+  verifyRecUser,
 };

@@ -1,9 +1,9 @@
 require('dotenv').config()
 const jwt = require('jsonwebtoken')
 const config = require('../config')
-const asyncHandler = require('../services/asyncErrorHanlder')
+const { asyncErrorHandler } = require('../services/middleware')
 
-const authenticateToken = asyncHandler((req, res, next) => {
+const authenticateToken = asyncErrorHandler((req, res, next) => {
   const header = req.headers.authorization
   const key = config.jwtSecret
 

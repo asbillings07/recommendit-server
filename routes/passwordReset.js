@@ -6,16 +6,15 @@ const bcrypt = require('bcryptjs')
 const messages = require('../services/emailMessages')
 const { sendEmail } = require('../services/emailSend')
 const emailTemplate = require('../services/emailTemplates')
-const asyncHandler = require('../services/asyncErrorHanlder')
-const { validateEmail } = require('../services/validationChain')
-const { findUserByEmail, findUserByToken } = require('../services/userFunctions')
+const { asyncErrorHandler, validateEmail } = require('../services/middleware')
+const { findUserByEmail, findUserByToken } = require('../services/mongoFunctions')
 const saltRounds = 12
 
 //POST /api/forgotpassword - status: 200 - finds user by email if the exist creates password reset token and sends customer reset password email.
 router.post(
   '/forgotpassword',
   validateEmail,
-  asyncHandler(async (req, res, next) => {
+  asyncErrorHandler(async (req, res, next) => {
     const { email } = req.body
     const user = await findUserByEmail(email)
     if (user) {
@@ -44,7 +43,7 @@ router.post(
 //GET /api/reset - status: 200 - finds user by password reset token, if the token exists on the query param user can proceed to reset their password.
 router.get(
   '/reset',
-  asyncHandler(async (req, res, _next) => {
+  asyncErrorHandler(async (req, res, _next) => {
     const token = req.query.resetPasswordToken
     console.log(token)
     const user = await findUserByToken(token)
@@ -64,7 +63,7 @@ router.get(
 
 router.put(
   '/updatepassword',
-  asyncHandler(async (req, res, _next) => {
+  asyncErrorHandler(async (req, res, _next) => {
     const { email, password } = req.body
     const user = await findUserByEmail(email)
     if (user) {

@@ -1,21 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const { authenticateToken } = require('../auth')
-const { validateComment } = require('../services/validationChain');
-const asyncHanlder = require('../services/asyncErrorHanlder');
+const { isObjectEqual } = require('../models/MongoFunctions/isObjectEqual')
+const { validateComment } = require('../services/middleware');
+const { asyncErrorHandler } = require('../services/middleware');
 const {
   createComment,
   updateComment,
   deleteComment,
-} = require('../services/commentFunctions');
-const { verifyUser } = require('../services/commentFunctions');
+  verifyCommentUser
+} = require('../services/mongoFunctions');
 
 // POST /rec/comment status: 201 - creating a new rating for a given recommendation
 router.post(
   '/rec/:id/comment',
   authenticateToken,
   validateComment,
-  asyncHanlder(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const body = req.body;
     const id = req.params.id;
     const user = req.user;
@@ -32,14 +33,14 @@ router.put(
   '/rec/:id/comment',
   authenticateToken,
   validateComment,
-  asyncHanlder(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const body = req.body;
     const id = req.params.id;
     const user = req.user;
 
-    const authedUser = await verifyUser(id);
+    const authedUser = await verifyCommentUser(id);
 
-    if (authedUser.user === user.id) {
+    if (isObjectEqual(authedUser.user, user.id)) {
       await updateComment(id, body);
       res.status(201).end();
     } else {
@@ -53,10 +54,10 @@ router.put(
 router.delete(
   '/rec/:id/comment',
   authenticateToken,
-  asyncHanlder(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const id = req.params.id;
     const user = req.user;
-    const authedUser = await verifyUser(id);
+    const authedUser = await verifyCommentUser(id);
     console.log(authedUser);
 
     if (authedUser.user === user.id) {

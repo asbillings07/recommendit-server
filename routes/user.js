@@ -4,9 +4,8 @@ const router = express.Router()
 const bcrypt = require('bcryptjs')
 const config = require('../config')
 const { createToken, authenticateToken } = require('../auth')
-const { validateUser, validateUpdateUser } = require('../services/validationChain')
+const { validateUser, validateUpdateUser, asyncErrorHandler } = require('../services/middleware')
 const { collectEmail, confirmEmail } = require('../services/emailController')
-const asyncHandler = require('../services/asyncErrorHanlder')
 const {
   createUser,
   deleteUser,
@@ -14,12 +13,12 @@ const {
   findUserByEmail,
   findUserByObj,
   findUserById
-} = require('../services/userFunctions')
+} = require('../services/mongoFunctions')
 
 // Authentication Route
 router.post(
   '/login',
-  asyncHandler(async (req, res, next) => {
+  asyncErrorHandler(async (req, res, next) => {
     const { email, password } = req.body
 
     if (email && password) {
@@ -54,7 +53,7 @@ router.post(
 router.get(
   '/users',
   authenticateToken,
-  asyncHandler(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const { id } = req.user
     const user = await findUserByObj({ _id: id })
     res.status(200).json(user)
@@ -64,7 +63,7 @@ router.get(
 router.post(
   '/users',
   validateUser,
-  asyncHandler(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const user = req.body
     const newUser = await createUser(user)
     const authedUser = newUser.dataValues
@@ -83,7 +82,7 @@ router.put(
   '/users',
   validateUpdateUser,
   authenticateToken,
-  asyncHandler(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const { id } = req.user
     const body = req.body
     const user = await updateUser(id, body)
@@ -95,7 +94,7 @@ router.put(
 router.delete(
   '/users',
   authenticateToken,
-  asyncHandler(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const { user } = req
     await deleteUser(user)
     res.status(204).location('/').end()

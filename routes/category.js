@@ -4,14 +4,13 @@ const {
   createCategory,
   getCategories,
   getCategory
-} = require('../services/categoryFunctions')
-const { validateCategory } = require('../services/validationChain')
-const asyncHanlder = require('../services/asyncErrorHanlder')
+} = require('../services/mongoFunctions')
+const { validateCategory, asyncErrorHandler } = require('../services/middleware')
 
 // GET /category 200 - Returns a list of categories (including the recommendations that belong to each category)
 router.get(
   '/category',
-  asyncHanlder(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const category = await getCategories()
     res.status(200).json({ category })
   })
@@ -19,7 +18,7 @@ router.get(
 // GET /category/:id 200 - Returns a category (including the recommendations that belong to that category) for the provided category id
 router.get(
   '/category/:id',
-  asyncHanlder(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     console.log({ Scookies: req.signedCookies.user, cookies: req.cookies })
     const id = req.params.id
     if (id) {
@@ -37,7 +36,7 @@ router.get(
 router.post(
   '/category',
   validateCategory,
-  asyncHanlder(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const category = req.body
     const newCate = await createCategory(category)
     res.status(201).json(newCate)

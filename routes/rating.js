@@ -1,8 +1,8 @@
 const { authenticateToken } = require('../auth')
 const express = require('express')
 const router = express.Router()
-const { validateRating } = require('../services/validationChain')
-const asyncHandler = require('../services/asyncErrorHanlder')
+const { isObjectEqual } = require('../models/MongoFunctions/isObjectEqual')
+const { validateRating, asyncErrorHandler } = require('../services/middleware')
 const {
   createRating,
   findRatingByRecId,
@@ -10,20 +10,20 @@ const {
   deleteRating,
   getRatings,
   getRating
-} = require('../services/ratingFunctions')
+} = require('../services/mongoFunctions')
 
 // GET /rating status 200 - gets all ratings for user
-router.get('/rating', authenticateToken, async (req, res) => {
+router.get('/rating', authenticateToken, asyncErrorHandler(async (req, res) => {
   const userId = req.user.id
   const ratings = await getRatings(userId)
   res.status(200).json(ratings)
-})
+}))
 // POST /rating/recs/:id status: 201 - creating a new rating for a given recommendation
 router.post(
-  '/rating/recs/:id',
+  '/rec/:id/rating',
   authenticateToken,
   validateRating,
-  asyncHandler(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const body = req.body
     const id = req.params.id
     const user = req.user
@@ -33,13 +33,13 @@ router.post(
 )
 // PUT /rating/recs/:id - status: 204 - updates a rating for an existing recommendaion if the user owns the rating - returns no content.
 router.put(
-  '/rating/recs/:id',
+  '/rec/:id/rating',
   authenticateToken,
   validateRating,
-  asyncHandler(async (req, res) => {
-    const { body, params, user } = req
-    const { id } = params
-    const rating = await getRating(id)
+  asyncErrorHandler(async (req, res) => {
+    const { body, user } = req
+    const { ratingId } = body
+    const rating = await getRating(ratingId)
 
     if (user) {
       if (rating !== null) {
@@ -55,15 +55,16 @@ router.put(
 )
 // DELETE /rating/recs/:id - status: 204 - deletes a rating for an existing recommendaion if the user owns the rating - returns no content.
 router.delete(
-  '/rating/recs/:id',
+  '/rec/:id/rating',
   authenticateToken,
-  asyncHandler(async (req, res) => {
-    const id = req.params.id
-    const user = req.user
-    const rating = await findRatingByRecId(id)
-    if (rating.user === user.id) {
-      await deleteRating(id)
-      res.status(204).end()
+  asyncErrorHandler(async (req, res) => {
+    const { user, body } = req
+    const { ratingId } = body
+    const rating = await getRating(ratingId)
+
+    if (isObjectEqual(rating.user, user.id)) {
+      await deleteRating(ratingId)
+      res.status(200).json('rating deleted!')
     } else {
       res.status(403).json({
         error: '403 Forbidden',

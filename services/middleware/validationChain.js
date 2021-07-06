@@ -5,7 +5,7 @@ const {
   Category,
   Rating,
   Comment,
-} = require('../models');
+} = require('../../models');
 
 // displays errors to the user when fields are left empty or filled out incorrectly.
 const errorHandler = async (req, res, next) => {

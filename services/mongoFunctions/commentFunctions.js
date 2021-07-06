@@ -1,7 +1,7 @@
-const { Comment, Recommendation } = require('../models');
-
+const { Comment, Recommendation } = require('../../models');
+const { createAddModel } = require('../createAddModel')
 // verifies user by checking the comment where the recommendation id is equal to the param id
-const verifyUser = id =>
+const verifyCommentUser = id =>
   Comment.findOne({
     rec: id,
   });
@@ -29,5 +29,5 @@ module.exports = {
   updateComment,
   deleteComment,
   getComment,
-  verifyUser,
+  verifyCommentUser,
 };

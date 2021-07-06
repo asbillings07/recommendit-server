@@ -1,6 +1,6 @@
-const { User, Recommendation } = require('../models')
+const { User, Recommendation } = require('../../models')
 const bcrypt = require('bcryptjs')
-const { saltRounds } = require('../config')
+const { saltRounds } = require('../../config')
 
 const createSaltHash = async (text, size) => {
   try {

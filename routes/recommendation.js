@@ -2,8 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { isObjectEqual } = require('../models/MongoFunctions/isObjectEqual')
 const { authenticateToken } = require('../auth')
-const { validateRecommendation } = require('../services/validationChain')
-const asyncHandler = require('../services/asyncErrorHanlder')
+const { validateRecommendation, asyncErrorHandler } = require('../services/middleware')
 const {
   getAllRecs,
   createRec,
@@ -12,13 +11,13 @@ const {
   getRecWithUser,
   getRecWithRating,
   verifyUser
-} = require('../services/recommendationFunctions')
-const { findRatingByRecId, deleteRating } = require('../services/ratingFunctions')
+} = require('../services/mongoFunctions')
+const { findRatingByRecId, deleteRating } = require('../services/mongoFunctions/ratingFunctions')
 
 // GET /recs status: 200 - Returns a list of recommendations (including the user that owns each recommendation)
 router.get(
   '/recs',
-  asyncHandler(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const recs = await getAllRecs()
     if (recs) {
       res.status(200).json(recs)
@@ -34,7 +33,7 @@ router.get(
 //GET /recs/:id  status: 200 - Returns a recommendation (including the user that owns the recommendation) for the provided recommendation ID
 router.get(
   '/recs/:id',
-  asyncHandler(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const id = req.params.id
     const rec = await getRecWithUser(id)
     if (rec) {
@@ -53,7 +52,7 @@ router.post(
   '/recs/category/:id',
   authenticateToken,
   validateRecommendation,
-  asyncHandler(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const id = req.params.id
     const user = req.user
     const rec = req.body
@@ -74,7 +73,7 @@ router.put(
   '/recs/:id',
   validateRecommendation,
   authenticateToken,
-  asyncHandler(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const id = req.params.id
     const user = req.user
     const rec = req.body
@@ -93,7 +92,7 @@ router.put(
 router.delete(
   '/recs/:id',
   authenticateToken,
-  asyncHandler(async (req, res) => {
+  asyncErrorHandler(async (req, res) => {
     const id = req.params.id
     const user = req.user
     const authedUser = await verifyUser(id)

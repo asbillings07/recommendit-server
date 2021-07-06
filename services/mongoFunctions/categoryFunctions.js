@@ -4,8 +4,7 @@ const {
   Recommendation,
   Rating,
   Comment,
-} = require('../models');
-const { populate } = require('../models/category');
+} = require('../../models');
 
 // create category
 

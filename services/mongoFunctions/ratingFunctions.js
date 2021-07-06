@@ -1,5 +1,5 @@
-const { Rating, User, Recommendation } = require('../models')
-const { createAddModel } = require('./createAddModel')
+const { Rating, User, Recommendation } = require('../../models')
+const { createAddModel } = require('../createAddModel')
 
 // verifies user by checking the rating where the recommendation id is equal to the param id
 const findRatingByRecId = (id) =>
