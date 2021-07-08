@@ -12,7 +12,8 @@ const {
   updateUser,
   findUserByEmail,
   findUserByObj,
-  findUserById
+  findUserById,
+  addSavedRecommendation
 } = require('../services/mongoFunctions')
 
 // Authentication Route
@@ -77,6 +78,15 @@ router.post(
       })
   })
 )
+router.post(
+  '/users/rec/:id',
+  authenticateToken,
+  asyncErrorHandler(async (req, res) => {
+    const { params, user } = req
+    const { id } = params
+    const updatedUser = await addSavedRecommendation(id, user.id)
+    res.status(201).json(updatedUser)
+  }))
 
 // PUT /api/users - updates user and returns no content
 router.put(

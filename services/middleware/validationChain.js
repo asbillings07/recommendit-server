@@ -84,7 +84,7 @@ const validateEmail = [
     .exists({ checkNull: true, checkFalsy: true })
     .withMessage('Please provide a value for Email Address')
     .isEmail()
-    .withMessage('Email Address must be formated correctly'),
+    .withMessage('Email Address must be formatted correctly'),
 ];
 const validateComment = [
   check('comment')

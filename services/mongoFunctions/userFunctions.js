@@ -12,7 +12,15 @@ const createSaltHash = async (text, size) => {
 }
 
 const findUserByObj = obj =>
-  User.findOne(obj).populate('recommendations').select('-password')
+  User.findOne(obj).populate({
+    path: 'savedRecommendations', populate: {
+      path: 'ratings',
+    }
+  }).populate({
+    path: 'savedRecommendations', populate: {
+      path: 'comments'
+    }
+  })
 
 // creates user and hashes password
 const createUser = async user => {

@@ -24,7 +24,7 @@ const createRec = (user, rec, id) => {
 // get all Recommendations including User and Rating
 
 const getAllRecs = () =>
-  Recommendation.find({}).populate('user').populate('ratings').populate('comments').select('-password')
+  Recommendation.find({}).populate('user').populate('ratings').populate('comments')
 
 
 // get one Recommendation with id and include User and Ratings
