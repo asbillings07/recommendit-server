@@ -1,4 +1,4 @@
-const { User, Recommendation } = require('../../models')
+const { User, Recommendation, Token } = require('../../models')
 const bcrypt = require('bcryptjs')
 const { saltRounds } = require('../../config');
 
@@ -69,8 +69,18 @@ const findUserByToken = token =>
     }
   })
 
+const addUserToken = (userId, hashedToken) => new Token({
+  userId,
+  token: hashedToken,
+  createdAt: Date.now()
+}).save()
+
+const findTokenByUser = (userId) => Token.findOne({ userId })
+
 const findUserById = id =>
   User.findOne({ _id: id })
+
+
 
 
 
@@ -83,5 +93,8 @@ module.exports = {
   findUserByToken,
   findUserById,
   findUserByObj,
-  addSavedRecommendation
+  addSavedRecommendation,
+  findTokenByUser,
+  addUserToken,
+  createSaltHash
 }
