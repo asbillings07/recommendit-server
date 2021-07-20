@@ -73,6 +73,9 @@ router.put(
 
       if (!newPassword) throw new Error('something went wrong!')
 
+      const token = findTokenByUser(user.id)
+      if (token) token.deleteOne()
+
       res.status(200).json({ message: 'password updated successfully!' })
     } else {
       res.status(400).json({ message: 'No user exists in our database to update' })
