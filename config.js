@@ -18,7 +18,7 @@ module.exports = {
     botEmailPassword: process.env.EMAIL_PASSWORD,
   },
   production: {
-    databaseUrl: process.env.DATABASE_URL,
+    databaseUrl: process.env.PROD_DB_URL,
     clientOrigin: 'https://recommendit.netlify.com',
     port: process.env.PORT || 5000,
     botEmailAddress: process.env.EMAIL_ADDRESS,
