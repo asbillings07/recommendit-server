@@ -1,60 +1,15 @@
-'use strict';
-// gives access to the node env
-require('dotenv').config();
-const fs = require('fs');
-const path = require('path');
-const Sequelize = require('sequelize');
-const basename = path.basename(__filename);
-// will look in env or development
-const env = process.env.NODE_ENV || 'production';
-const config = require('../config')[env];
+const Category = require('./category')
+const Comment = require('./comment')
+const Rating = require('./rating')
+const Recommendation = require('./recommendation')
+const User = require('./user')
+const Token = require('./token')
 
-const db = {};
-
-let sequelize;
-// checks if any env variable is set
-if (config.databaseUrl) {
-  // if it is use the settings for that
-  sequelize = new Sequelize(config.databaseUrl, {
-    rejectUnauthorized: false,
-  });
-} else {
-  // if not use a new instance the db
-  sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    config
-  );
+module.exports = {
+    Category,
+    Comment,
+    Rating,
+    Recommendation,
+    User,
+    Token
 }
-// let's us know if our DB connection is good or not
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch((err) => {
-    console.log('Unable to connect to the database:', err);
-  });
-// reading the files and importing sequelize
-fs.readdirSync(__dirname)
-  .filter((file) => {
-    return (
-      file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js'
-    );
-  })
-  .forEach((file) => {
-    const model = sequelize['import'](path.join(__dirname, file));
-    db[model.name] = model;
-  });
-// allows us to use associatation or relationships for our db
-Object.keys(db).forEach((modelName) => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
-  }
-});
-
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-
-module.exports = db;

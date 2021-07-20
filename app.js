@@ -1,11 +1,12 @@
 
-const env = process.env.NODE_ENV || 'local'
+const env = process.env.NODE_ENV || 'development'
 const express = require('express')
 const bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
 const Sentry = require('@sentry/node')
 const config = require('./config')
 const logger = require('./logger')
+require('./mongoose')(config[env])
 Sentry.init({
   dsn: 'https://646a0f42f7b54b3db2377c78174bdb4f@sentry.io/1726096'
 })
@@ -15,39 +16,11 @@ const formData = require('express-form-data')
 // required to show HTTP requests in console
 const cors = require('cors')
 const passport = require('passport')
-require('bcryptjs')
-require('jsonwebtoken')
 require('dotenv').config()
-const passportJWT = require('passport-jwt')
-const { findUserByObj } = require('./services/userFunctions')
 
 const app = express()
 exports.app = app
 app.use(Sentry.Handlers.requestHandler())
-
-// Passport JWT Authentication
-const ExtractJwt = passportJWT.ExtractJwt
-const JWTstrategy = passportJWT.Strategy
-const jwtOptions = {
-  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.JWT_SECRET
-}
-exports.jwtOptions = jwtOptions
-// create Strategy for passport
-const strategy = new JWTstrategy(jwtOptions, async (jwt_payload, next) => {
-  console.log('pay load recived!', jwt_payload)
-  const user = await findUserByObj({ id: jwt_payload.id })
-  if (user) {
-    next(null, user)
-  } else {
-    next(null, false, info.message)
-  }
-})
-
-passport.use(strategy)
-// export passport authenication middleware
-const authenticateUser = passport.authenticate('jwt', { session: false })
-exports.authenticateUser = authenticateUser
 
 /// whitelisting for Cors
 const whitelist = [
@@ -90,6 +63,9 @@ app.use('/api', categoryRoute)
 app.use('/api', ratingRoute)
 app.use('/api', passwordReset)
 app.use('/api', commentRoute)
+logger.debug("Overriding 'Express' logger")
+app.use(require('morgan')('combined', { stream: logger.stream }))
+
 
 app.get('/', (req, res, next) => {
   res.json({
@@ -140,6 +116,7 @@ app.use((err, req, res, next) => {
     console.log(err.stack)
   }
 })
+
 
 // sets port
 const PORT = config[env].port

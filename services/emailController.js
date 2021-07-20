@@ -1,10 +1,10 @@
-const { findUserByEmail, findUserById } = require('./userFunctions')
+const { findUserByEmail, findUserById } = require('./mongoFunctions/userFunctions')
 const { sendEmail } = require('./emailSend')
 const messages = require('./emailMessages')
 const template = require('./emailTemplates')
-const asyncHandler = require('./asyncErrorHanlder')
+const { asyncErrorHandler } = require('./middleware')
 
-exports.collectEmail = asyncHandler(async (req, res, next) => {
+exports.collectEmail = asyncErrorHandler(async (req, res, next) => {
   // console.log(req.signedCookies)
   const { email } = req.body
 
@@ -21,7 +21,7 @@ exports.collectEmail = asyncHandler(async (req, res, next) => {
   }
 })
 
-exports.confirmEmail = asyncHandler(async (req, res) => {
+exports.confirmEmail = asyncErrorHandler(async (req, res) => {
   console.log(req)
   const { id } = req.user
 

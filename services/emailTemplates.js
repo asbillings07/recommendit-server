@@ -1,4 +1,6 @@
-const config = require('../config')
+require('dotenv').config()
+const env = process.env.NODE_ENV || 'development'
+const { clientOrigin } = require('../config')[env]
 
 module.exports = {
   confirm: (email) => ({
@@ -8,7 +10,7 @@ module.exports = {
     html: `
         <h1> Welcome to RecommendIt! </h1>
         <h3>Confirm your email by clicking the link below.</h3>
-        <a href='${config[config.env].clientOrigin}/confirm'>
+        <a href='${clientOrigin}/confirm'>
           Confirm Email
         </a>
         <p>We will never send you spam, or misuse your information</p>
@@ -16,7 +18,7 @@ module.exports = {
       `
   }),
 
-  passwordReset: (email, token) => ({
+  passwordReset: (email, token, userId) => ({
     from: 'recommendItBot@gmail.com',
     to: `${email}`,
     subject: 'Link to Reset Password',
@@ -26,7 +28,7 @@ module.exports = {
 
     Please click on the link below to choose a new password.
     </p>
-    <a href='${config[config.env].clientOrigin}/reset/${token}'>Reset Password</a>
+    <a href='${clientOrigin}/reset?token=${token}&id=${userId}'>Reset Password</a>
 
     <p>If you did not request to reset your password, please disregard this email and your password will not be changed.
     </p>

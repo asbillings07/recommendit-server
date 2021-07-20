@@ -5,10 +5,10 @@ const {
   Category,
   Rating,
   Comment,
-} = require('../models');
+} = require('../../models');
 
 // displays errors to the user when fields are left empty or filled out incorrectly.
-const errorHanlder = async (req, res, next) => {
+const errorHandler = async (req, res, next) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
@@ -56,7 +56,7 @@ const validateUser = [
     .withMessage(
       'Please provide a value for password that is atleast 8 chars long'
     ),
-  errorHanlder,
+  errorHandler,
 ];
 // checks to make sure title, desc, and location on the recommendation route are not blank
 const validateRecommendation = [
@@ -71,26 +71,26 @@ const validateRecommendation = [
     .withMessage(
       'Please add a location so others can visit your recommendation'
     ),
-  errorHanlder,
+  errorHandler,
 ];
 const validateRating = [
-  check('rate')
+  check('rating')
     .exists({ checkNull: true, checkFalsy: true })
     .withMessage('Please provide a rating'),
-  errorHanlder,
+  errorHandler,
 ];
 const validateEmail = [
   check('email')
     .exists({ checkNull: true, checkFalsy: true })
     .withMessage('Please provide a value for Email Address')
     .isEmail()
-    .withMessage('Email Address must be formated correctly'),
+    .withMessage('Email Address must be formatted correctly'),
 ];
 const validateComment = [
   check('comment')
     .exists({ checkNull: true, checkFalsy: true })
     .withMessage('Please provide a comment'),
-  errorHanlder,
+  errorHandler,
 ];
 const validateUpdateUser = [
   check('firstName')

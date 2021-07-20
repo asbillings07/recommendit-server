@@ -8,9 +8,10 @@ module.exports = {
   googleMailClientSecret: process.env.GOOGLE_MAIL_CLIENT_SECRET,
   cookieParserSecret: process.env.COOKIE_PARSER_SECRET,
   refreshToken: process.env.REFRESH_TOKEN,
+  saltRounds: process.env.SALT_ROUNDS,
 
   development: {
-    databaseUrl: process.env.DEV_DB_URL,
+    databaseUrl: process.env.DATABASE_URL,
     clientOrigin: 'http://localhost:3000' || 'http://localhost:3001',
     port: process.env.PORT || 5000,
     botEmailAddress: process.env.EMAIL_ADDRESS,

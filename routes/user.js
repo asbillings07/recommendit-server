@@ -3,25 +3,23 @@ require('dotenv').config()
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 const config = require('../config')
-const jwt = require('jsonwebtoken')
-const { authenicateToken } = require('../services/authToken')
-const { authenticateUser } = require('../app')
-const { validateUser, validateUpdateUser } = require('../services/validationChain')
+const { createToken, authenticateToken } = require('../auth')
+const { validateUser, validateUpdateUser, asyncErrorHandler } = require('../services/middleware')
 const { collectEmail, confirmEmail } = require('../services/emailController')
-const asyncHandler = require('../services/asyncErrorHanlder')
 const {
   createUser,
   deleteUser,
   updateUser,
   findUserByEmail,
   findUserByObj,
-  updateUserPhoto
-} = require('../services/userFunctions')
+  findUserById,
+  addSavedRecommendation
+} = require('../services/mongoFunctions')
 
 // Authentication Route
 router.post(
   '/login',
-  asyncHandler(async (req, res, next) => {
+  asyncErrorHandler(async (req, res, next) => {
     const { email, password } = req.body
 
     if (email && password) {
@@ -35,7 +33,7 @@ router.post(
           photo: user.photo
         }
 
-        const token = jwt.sign(authUser, config.jwtSecret)
+        const token = createToken(authUser)
         res.cookie('user', authUser, { signed: true })
         res.json({
           message: 'ok',
@@ -55,10 +53,10 @@ router.post(
 // GET /api/users 200 - Returns the currently authenticated user
 router.get(
   '/users',
-  authenticateUser,
-  asyncHandler(async (req, res) => {
+  authenticateToken,
+  asyncErrorHandler(async (req, res) => {
     const { id } = req.user
-    const user = await findUserByObj({ id })
+    const user = await findUserByObj({ _id: id })
     res.status(200).json(user)
   })
 )
@@ -66,10 +64,11 @@ router.get(
 router.post(
   '/users',
   validateUser,
-  asyncHandler(async (req, res) => {
-    const user = req.body
-    const newUser = await createUser(user)
+  asyncErrorHandler(async (req, res) => {
+    const { body } = req
+    const newUser = await createUser(body)
     const authedUser = newUser.dataValues
+
     res.cookie('user', authedUser, { signed: true })
     res
       .location('/')
@@ -79,43 +78,40 @@ router.post(
       })
   })
 )
+router.post(
+  '/users/rec/:id',
+  authenticateToken,
+  asyncErrorHandler(async (req, res) => {
+    const { params, user } = req
+    const { id } = params
+    const updatedUser = await addSavedRecommendation(id, user.id)
+    res.status(201).json(updatedUser)
+  }))
 
 // PUT /api/users - updates user and returns no content
 router.put(
   '/users',
   validateUpdateUser,
-  authenticateUser,
-  collectEmail,
-  asyncHandler(async (req, res) => {
-    const { id } = req.user
-    const body = req.body
-    await updateUser(id, body)
-    res.status(204).end()
-  })
-)
+  authenticateToken,
+  asyncErrorHandler(async (req, res) => {
+    const { user, body } = req
+    const updatedUser = await updateUser(user.id, body)
 
-router.post(
-  '/userphoto',
-  authenticateUser,
-  asyncHandler(async (req, res) => {
-    const { id } = req.user
-    const body = req.body
-    await updateUserPhoto(id, body)
-    res.status(204).end()
+    res.status(201).json(updatedUser)
   })
 )
 // DELETE (Careful, this deletes users from the DB) /api/users 204 - deletes a user, sets the location to '/', and returns no content
 router.delete(
   '/users',
-  authenticateUser,
-  asyncHandler(async (req, res) => {
+  authenticateToken,
+  asyncErrorHandler(async (req, res) => {
     const { user } = req
-    await deleteUser(user)
+    await deleteUser(user.id)
     res.status(204).location('/').end()
   })
 )
 
 router.post('/email', collectEmail)
-router.get('/email/confirm', authenticateUser, confirmEmail)
+router.get('/email/confirm', authenticateToken, confirmEmail)
 
 module.exports = router

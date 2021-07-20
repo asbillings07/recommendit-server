@@ -1,21 +1,22 @@
+require('dotenv').config()
 const jwt = require('jsonwebtoken')
 const config = require('../config')
+const { asyncErrorHandler } = require('../services/middleware')
 
-exports.authenicateToken = (req, res, next) => {
+const authenticateToken = asyncErrorHandler((req, res, next) => {
   const header = req.headers.authorization
   const key = config.jwtSecret
 
   if (typeof header !== 'undefined') {
     const bearer = header.split(' ')
     const token = bearer[1]
+
     jwt.verify(token, key, (err, payload) => {
-      if (err) {
-        res.status(400).send({
-          error: err.name,
-          message: err.message
-        })
-      } else {
+      try {
+        req.user = payload.sub
         next()
+      } catch (error) {
+        throw new Error(err.message)
       }
     })
   } else {
@@ -25,4 +26,8 @@ exports.authenicateToken = (req, res, next) => {
         'Your header was not a valid JWT header, please check your headers and try again'
     })
   }
+})
+
+module.exports = {
+  authenticateToken
 }
