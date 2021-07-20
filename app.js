@@ -28,6 +28,7 @@ const whitelist = [
   'http://localhost:5000',
   'http://localhost:3001',
   'https://recommendit.netlify.app',
+  'https://recommendit.netlify.com',
   'https://sentry.io'
 ]
 const corsOptions = {
